@@ -22,10 +22,10 @@ class FullNewsScreenView: UIView {
         
         tableview.translatesAutoresizingMaskIntoConstraints = false
         tableview.separatorStyle = .singleLine
-        tableview.backgroundColor = #colorLiteral(red: 0.9568627451, green: 0.9568627451, blue: 0.9568627451, alpha: 1)
+        tableview.backgroundColor = Colors.background
         addSubview(tableview)
         
-        footerForTableView.backgroundColor = #colorLiteral(red: 0.9568627451, green: 0.9568627451, blue: 0.9568627451, alpha: 1)
+        footerForTableView.backgroundColor = Colors.background
         footerForTableView.layer.borderWidth = 0.5
         footerForTableView.layer.borderColor = #colorLiteral(red: 0.7764705882, green: 0.7764705882, blue: 0.7843137255, alpha: 1)
 
@@ -38,7 +38,7 @@ class FullNewsScreenView: UIView {
         footerTextFieldForTableView.placeholder = "Напишите ответ"
         footerTextFieldForTableView.clipsToBounds = true
         footerTextFieldForTableView.layer.cornerRadius = 10
-        footerTextFieldForTableView.backgroundColor = .white
+        footerTextFieldForTableView.backgroundColor = Colors.white
         footerTextFieldForTableView.layer.borderWidth = 1
         footerTextFieldForTableView.layer.borderColor = #colorLiteral(red: 0.862745098, green: 0.862745098, blue: 0.8666666667, alpha: 1)
         footerForTableView.addSubview(footerTextFieldForTableView)

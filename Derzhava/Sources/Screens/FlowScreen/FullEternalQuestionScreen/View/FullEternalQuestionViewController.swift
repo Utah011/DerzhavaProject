@@ -13,22 +13,11 @@ class FullEternalQuestionViewController: UIViewController {
     let contentView = FullEternalQuestionScreenView()
     var selectedIndex = IndexPath()
     
-//    let tableview:UITableView = {
-//        let table = UITableView()
-//        table.translatesAutoresizingMaskIntoConstraints = false
-//        table.separatorStyle = .singleLine
-//        table.backgroundColor = #colorLiteral(red: 0.9568627451, green: 0.9568627451, blue: 0.9568627451, alpha: 1)
-//        return table
-//    }()
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemTeal
         setNavigationController()
         setTableView()
-//        addSubviews()
-//        setConstrains()
     }
     
     override func loadView() {
@@ -38,20 +27,9 @@ class FullEternalQuestionViewController: UIViewController {
     func setNavigationController(){
         navigationController?.setNavigationBarHidden(false, animated: true)
         navigationItem.title = "Вечный вопрос"
-        navigationController?.navigationBar.backgroundColor = #colorLiteral(red: 0.9568627451, green: 0.9568627451, blue: 0.9568627451, alpha: 1)
+        navigationController?.navigationBar.backgroundColor = Colors.background
         navigationItem.largeTitleDisplayMode = .never
     }
-    
-//    func addSubviews(){
-//        [tableview].forEach{self.view.addSubview($0)}
-//    }
-//
-//    func setConstrains(){
-//        tableview.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
-//        tableview.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0).isActive = true
-//        tableview.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0).isActive = true
-//        tableview.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
-//    }
     
     func setTableView(){
         contentView.tableview.delegate = self
@@ -96,7 +74,6 @@ extension FullEternalQuestionViewController: UITableViewDelegate, UITableViewDat
         default:
             if UserDefaults.standard.bool(forKey: "isUserLoggedIn"){
                 return view
-//                print("YOU ARE IN!")
             } else {
                 return UIView()
             }
@@ -254,8 +231,6 @@ extension FullEternalQuestionViewController: UITableViewDelegate, UITableViewDat
                 assertionFailure("FullEternalQuestionCell is not available")
                 return UITableViewCell()
             }
-//            cell.titleLabel.text = eternalQuestionsArray[indexPath.row].title
-//            cell.mainTextLabel.text = eternalQuestionsArray[indexPath.row].maintext
             cell.configure(with: EternalQuestionsViewModel(with: eternalQuestionModel))
             
             return cell
@@ -265,11 +240,6 @@ extension FullEternalQuestionViewController: UITableViewDelegate, UITableViewDat
                 return UITableViewCell()
             }
 
-//            cell.photoImageView.image = answersArray[indexPath.row].photo
-//            cell.nameLabel.text = answersArray[indexPath.row].namesurname
-//            cell.adressLabel.text = answersArray[indexPath.row].maintext
-//            cell.positionLabel.text = answersArray[indexPath.row].position
-//            cell.timeLabel.text = answersArray[indexPath.row].time
             cell.configure(with: AnswersViewModel(with: newOpinions))
             
             if selectedIndex == indexPath {
@@ -285,11 +255,6 @@ extension FullEternalQuestionViewController: UITableViewDelegate, UITableViewDat
                 return UITableViewCell()
             }
 
-//                cell.photoImageView.image = secondAnswersArray[indexPath.row].photo
-//                cell.nameLabel.text = secondAnswersArray[indexPath.row].namesurname
-//                cell.adressLabel.text = secondAnswersArray[indexPath.row].maintext
-//                cell.positionLabel.text = secondAnswersArray[indexPath.row].position
-//                cell.timeLabel.text = secondAnswersArray[indexPath.row].time
             cell.configure(with: AnswersViewModel(with: readOpinions))
             
             if selectedIndex == indexPath {

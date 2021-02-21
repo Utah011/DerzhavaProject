@@ -7,10 +7,7 @@
 //
 
 import Foundation
-
 import UIKit
-
-//import ExpandableLabel
 
 class TwitsCell: UITableViewCell {
     
@@ -23,14 +20,13 @@ class TwitsCell: UITableViewCell {
     let separateView:UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = #colorLiteral(red: 0.9529411765, green: 0.9568627451, blue: 0.9607843137, alpha: 1)
+        view.backgroundColor = Colors.background
         return view
     }()
     
     let photoImageView:UIImageView = {
         let img = UIImageView()
         img.clipsToBounds = true
-        //img.image = UIImage(named: "polit")
         img.translatesAutoresizingMaskIntoConstraints = false
         img.layer.cornerRadius = 25
         img.contentMode = .scaleAspectFill
@@ -39,7 +35,6 @@ class TwitsCell: UITableViewCell {
     
     let newsImageView:UIImageView = {
         let img = UIImageView()
-        //img.image = UIImage(named: "polit")
         img.translatesAutoresizingMaskIntoConstraints = false
         img.contentMode = .scaleAspectFill
         return img
@@ -51,10 +46,8 @@ class TwitsCell: UITableViewCell {
         lbl.textAlignment = .left
         lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.font = UIFont(name: "SFProDisplay-Semibold", size: 20)
-        //lbl.font = lbl.font.withSize(20)
-        lbl.textColor = .black
+        lbl.textColor = Colors.black
         lbl.lineBreakMode = .byTruncatingTail
-        //lbl.text = "Иван Волкодавский"
         return lbl
     }()
     
@@ -64,8 +57,6 @@ class TwitsCell: UITableViewCell {
         lbl.textAlignment = .left
         lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.font = UIFont(name: "SFProText-Regular", size: 11)
-        //lbl.frame = CGRect(x:0,y:0,width:lbl.intrinsicContentSize.width,height:lbl.intrinsicContentSize.height)
-        //lbl.text = "Председатель правления Приморского края"
         lbl.text = "Сегодня в 14:20"
         lbl.lineBreakMode = .byWordWrapping
         lbl.textColor = #colorLiteral(red: 0.5411764706, green: 0.5411764706, blue: 0.5411764706, alpha: 1)
@@ -79,9 +70,8 @@ class TwitsCell: UITableViewCell {
         lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.font = UIFont(name: "SFProText-Regular", size: 17)
         lbl.text = "Отмечается, что страна, которая во время первой волны пандемии, в отличие от других европейских государств, не вводила широких ограничений, теперь вынуждена ввести локальные карантинные меры."
-        lbl.textColor = .black
+        lbl.textColor = Colors.black
         lbl.lineBreakMode = .byTruncatingTail
-        //lbl.text = "Иван Волкодавский"
         return lbl
     }()
     

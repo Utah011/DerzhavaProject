@@ -39,9 +39,9 @@ class CallForDebateViewController: UIViewController {
     let addPoliticianButton:UIButton = {
         let btn = UIButton()
         btn.translatesAutoresizingMaskIntoConstraints = false
-        btn.backgroundColor = .white
+        btn.backgroundColor = Colors.white
         btn.layer.borderWidth = 0.5
-        btn.layer.borderColor = #colorLiteral(red: 0.9529411765, green: 0.9568627451, blue: 0.9607843137, alpha: 1)
+        btn.layer.borderColor = Colors.background?.cgColor
         btn.addTarget(self, action: #selector(goToAddPoloticiansScreen), for: .touchUpInside)
         return btn
     }()
@@ -51,16 +51,16 @@ class CallForDebateViewController: UIViewController {
         lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.text = "Выбрать политика для дебатов"
         lbl.font = UIFont(name: "SFProDisplay-Regular", size: 17)
-        lbl.textColor = #colorLiteral(red: 0.2509803922, green: 0.3294117647, blue: 0.6980392157, alpha: 1)
+        lbl.textColor = Colors.darkBlue
         return lbl
     }()
     
     let chooseDataAndTimeButton:UIButton = {
         let btn = UIButton()
         btn.translatesAutoresizingMaskIntoConstraints = false
-        btn.backgroundColor = .white
+        btn.backgroundColor = Colors.white
         btn.layer.borderWidth = 0.5
-        btn.layer.borderColor = #colorLiteral(red: 0.9529411765, green: 0.9568627451, blue: 0.9607843137, alpha: 1)
+        btn.layer.borderColor = Colors.background?.cgColor
         btn.addTarget(self, action: #selector(goToChooseTimeAndPriceScreen), for: .touchUpInside)
         return btn
     }()
@@ -70,13 +70,13 @@ class CallForDebateViewController: UIViewController {
         lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.text = "Выбрать тему дебатов"
         lbl.font = UIFont(name: "SFProDisplay-Regular", size: 17)
-        lbl.textColor = #colorLiteral(red: 0.2509803922, green: 0.3294117647, blue: 0.6980392157, alpha: 1)
+        lbl.textColor = Colors.darkBlue
         return lbl
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = #colorLiteral(red: 0.9803921569, green: 0.9803921569, blue: 0.9803921569, alpha: 1)
+        view.backgroundColor = Colors.background
         
         setNavigationController()
         setTextView()
@@ -89,10 +89,10 @@ class CallForDebateViewController: UIViewController {
         navigationItem.title = ""
         navigationItem.largeTitleDisplayMode = .never
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Вызвать на дебаты", style: .plain, target: self, action: #selector(nothingHere))
-        navigationItem.rightBarButtonItem?.tintColor = #colorLiteral(red: 0.2509803922, green: 0.3294117647, blue: 0.6980392157, alpha: 1)
+        navigationItem.rightBarButtonItem?.tintColor = Colors.darkBlue
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Отмена", style: .plain, target: self, action: #selector(close))
-        navigationItem.leftBarButtonItem?.tintColor = .black
+        navigationItem.leftBarButtonItem?.tintColor = Colors.black
     }
     
     @objc
@@ -184,11 +184,6 @@ class CallForDebateViewController: UIViewController {
     
     @objc
     func tapDone(sender: Any) {
-//
-//        if heightConstraintForTitle.constant > 100 {
-//        self.view.frame.origin.y = 0
-//        }
-        
         self.view.endEditing(true)
     }
 
@@ -218,7 +213,7 @@ extension CallForDebateViewController: UITextViewDelegate {
         if textView == textView {
             if textView.textColor == UIColor.lightGray {
                 textView.text = nil
-                textView.textColor = UIColor.black
+                textView.textColor = Colors.black
             }
         }
     }

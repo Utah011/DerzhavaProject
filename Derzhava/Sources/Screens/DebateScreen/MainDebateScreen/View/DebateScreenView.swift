@@ -18,7 +18,7 @@ class DebateScreenView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         
         let layout = UICollectionViewFlowLayout()
         layout.minimumLineSpacing = 15
@@ -33,13 +33,13 @@ class DebateScreenView: UIView {
         tableThemeView.translatesAutoresizingMaskIntoConstraints = false
         tableThemeView.separatorStyle = .none
         tableThemeView.isScrollEnabled = true
-        tableThemeView.backgroundColor = #colorLiteral(red: 0.9568627451, green: 0.9568627451, blue: 0.9568627451, alpha: 1)
+        tableThemeView.backgroundColor = Colors.background
         addSubview(tableThemeView)
-
+                
         titleLabelForNavController.translatesAutoresizingMaskIntoConstraints = false
         titleLabelForNavController.text = "Дебаты"
         titleLabelForNavController.font = UIFont(name: "SFProDisplay-Bold", size: 34)
-        titleLabelForNavController.textColor = .black
+        titleLabelForNavController.textColor = Colors.black
         addSubview(titleLabelForNavController)
     }
     

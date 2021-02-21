@@ -7,19 +7,17 @@
 //
 
 import UIKit
-//главный
+
 class SearchNewsTableViewCell: UITableViewCell {
     
     let photoImageView:UIImageView = {
         let img = UIImageView()
         img.clipsToBounds = true
         img.layer.masksToBounds = false
-        //img.image = UIImage(named: "gerb")
         img.image = UIImage(named: "trum")
         img.translatesAutoresizingMaskIntoConstraints = false
         img.layer.cornerRadius = img.frame.size.width / 2
         img.contentMode = .scaleToFill
-        //img.layer.cornerRadius = 16
         return img
     }()
         
@@ -29,7 +27,7 @@ class SearchNewsTableViewCell: UITableViewCell {
         lbl.textAlignment = .left
         lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.font = UIFont(name: "SFProDisplay-Regular", size: 20)
-        lbl.textColor = .black
+        lbl.textColor = Colors.black
         lbl.text = "Состояние Трампа внушает большое беспокойство"
         lbl.lineBreakMode = .byWordWrapping
         return lbl
@@ -50,7 +48,7 @@ class SearchNewsTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        contentView.backgroundColor = #colorLiteral(red: 0.9529411765, green: 0.9568627451, blue: 0.9607843137, alpha: 1)
+        contentView.backgroundColor = Colors.background
         
         [photoImageView,titleLabel,newsLabel].forEach{self.contentView.addSubview($0)}
         setConstraints()

@@ -14,38 +14,14 @@ class DebateThemeViewController: UIViewController, UISearchBarDelegate {
     let searchController = UISearchController(searchResultsController: nil)
     
     var filteredData: [String]!
-    
-//    let tableview:UITableView = {
-//        let table = UITableView()
-//        table.translatesAutoresizingMaskIntoConstraints = false
-//        table.separatorStyle = .singleLine
-//        return table
-//    }()
-//
-//    let myHeaderView:UIView = {
-//        let view = UIView()
-//        view.backgroundColor = #colorLiteral(red: 0.9568627451, green: 0.9568627451, blue: 0.9568627451, alpha: 1)
-//        view.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 78)
-//        return view
-//    }()
-//
-//    let myHeaderTitle:UILabel = {
-//        let lbl = UILabel()
-//        lbl.translatesAutoresizingMaskIntoConstraints = false
-//        lbl.text = "Тема"
-//        lbl.font = UIFont(name: "SFProDisplay-Bold", size: 22)
-//        return lbl
-//    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = #colorLiteral(red: 0.9568627451, green: 0.9568627451, blue: 0.9568627451, alpha: 1)
+        view.backgroundColor = Colors.background
         filteredData = themesForDebate
         
         setNavigationController()
         setTableView()
-//        addSubviews()
-//        setConstrains()
     }
     
     override func loadView() {
@@ -57,10 +33,10 @@ class DebateThemeViewController: UIViewController, UISearchBarDelegate {
         navigationItem.title = ""
         navigationItem.largeTitleDisplayMode = .never
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Подтвердить", style: .plain, target: self, action: #selector(saveButtonTapped))
-        navigationItem.rightBarButtonItem?.tintColor = #colorLiteral(red: 0.2509803922, green: 0.3294117647, blue: 0.6980392157, alpha: 1)
+        navigationItem.rightBarButtonItem?.tintColor = Colors.darkBlue
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Отмена", style: .plain, target: self, action: #selector(close))
-        navigationItem.leftBarButtonItem?.tintColor = .black
+        navigationItem.leftBarButtonItem?.tintColor = Colors.black
         
         navigationItem.searchController = searchController
         searchController.searchBar.delegate = self
@@ -93,27 +69,12 @@ class DebateThemeViewController: UIViewController, UISearchBarDelegate {
         self.contentView.tableview.reloadData()
     }
     
-//    func addSubviews(){
-//        [tableview].forEach{self.view.addSubview($0)}
-//        myHeaderView.addSubview(myHeaderTitle)
-//    }
-    
     func setTableView(){
         contentView.tableview.delegate = self
         contentView.tableview.dataSource = self
         contentView.tableview.register(DebateThemeCell.self, forCellReuseIdentifier: "DebateThemeCell")
         contentView.tableview.tableHeaderView = contentView.myHeaderView
     }
-//
-//    func setConstrains(){
-//        tableview.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
-//        tableview.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0).isActive = true
-//        tableview.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0).isActive = true
-//        tableview.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
-//
-//        myHeaderTitle.topAnchor.constraint(equalTo: myHeaderView.topAnchor, constant: 30).isActive = true
-//        myHeaderTitle.leftAnchor.constraint(equalTo: myHeaderView.leftAnchor, constant: 16).isActive = true
-//    }
 
 }
 

@@ -16,7 +16,7 @@ class ChangeSubjectScreenView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         
         tableview.translatesAutoresizingMaskIntoConstraints = false
         tableview.separatorStyle = .singleLine

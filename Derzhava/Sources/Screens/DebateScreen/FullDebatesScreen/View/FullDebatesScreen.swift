@@ -43,7 +43,7 @@ class FullDebateScreenView: UIView {
         addSubview(pinnedView)
 
         lineView.translatesAutoresizingMaskIntoConstraints = false
-        lineView.backgroundColor = #colorLiteral(red: 0.2509803922, green: 0.3294117647, blue: 0.6980392157, alpha: 1)
+        lineView.backgroundColor = Colors.darkBlue
         pinnedView.addSubview(lineView)
 
         pinnedStartLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -51,14 +51,14 @@ class FullDebateScreenView: UIView {
         pinnedStartLabel.text = "Начало дебатов"
         pinnedStartLabel.font = UIFont(name: "SFProDisplay-SemiBold", size: 11)
         pinnedStartLabel.textAlignment = .left
-        pinnedStartLabel.textColor = .black
+        pinnedStartLabel.textColor = Colors.black
         pinnedView.addSubview(pinnedStartLabel)
     
         pinnedTitleLabel.translatesAutoresizingMaskIntoConstraints = false
         pinnedTitleLabel.numberOfLines = 1
         pinnedTitleLabel.font = UIFont(name: "SFProText-Regular", size: 11)
         pinnedTitleLabel.textAlignment = .left
-        pinnedTitleLabel.textColor = .black
+        pinnedTitleLabel.textColor = Colors.black
         pinnedTitleLabel.lineBreakMode = .byTruncatingTail
         pinnedView.addSubview(pinnedTitleLabel)
 
@@ -89,7 +89,7 @@ class FullDebateScreenView: UIView {
         headerTextLabel.text = "Выборы в Московскую государственную думу"
         headerTextLabel.font = UIFont(name: "SFProDisplay-Bold", size: 22)
         headerTextLabel.textAlignment = .center
-        headerTextLabel.textColor = .black
+        headerTextLabel.textColor = Colors.black
         myViewHeader.addSubview(headerTextLabel)
 
         headerTheme.translatesAutoresizingMaskIntoConstraints = false

@@ -57,7 +57,7 @@ class RegistrationScreenView: UIView {
         
         registrationButton.translatesAutoresizingMaskIntoConstraints = false
         registrationButton.clipsToBounds = true
-        registrationButton.backgroundColor = #colorLiteral(red: 0.2509803922, green: 0.3294117647, blue: 0.6980392157, alpha: 1)
+        registrationButton.backgroundColor = Colors.darkBlue
         registrationButton.layer.cornerRadius = 8
         registrationButton.titleLabel?.font = UIFont(name: "SFProDisplay-Semibold", size: 17)
         registrationButton.setTitle("Зарегистрироваться", for: .normal)

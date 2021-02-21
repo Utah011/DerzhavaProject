@@ -85,6 +85,7 @@
 		F5E0DF0E2575927100EDD4D7 /* FirstFullTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E0DF0D2575927100EDD4D7 /* FirstFullTableViewCell.swift */; };
 		F5E0DF1025766BDF00EDD4D7 /* PositionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E0DF0F25766BDF00EDD4D7 /* PositionTableViewCell.swift */; };
 		F5E3255C25CB5A41007C5184 /* CallForDebateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E3255B25CB5A41007C5184 /* CallForDebateViewController.swift */; };
+		F5E990B725DF055600D62B1D /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E990B625DF055600D62B1D /* Colors.swift */; };
 		F5EA2F3225509818004F823C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EA2F3125509818004F823C /* AppDelegate.swift */; };
 		F5EA2F3425509818004F823C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EA2F3325509818004F823C /* SceneDelegate.swift */; };
 		F5EA2F3625509818004F823C /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EA2F3525509818004F823C /* NewsViewController.swift */; };
@@ -181,6 +182,7 @@
 		F5E0DF0D2575927100EDD4D7 /* FirstFullTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstFullTableViewCell.swift; sourceTree = "<group>"; };
 		F5E0DF0F25766BDF00EDD4D7 /* PositionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionTableViewCell.swift; sourceTree = "<group>"; };
 		F5E3255B25CB5A41007C5184 /* CallForDebateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallForDebateViewController.swift; sourceTree = "<group>"; };
+		F5E990B625DF055600D62B1D /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		F5EA2F2E25509818004F823C /* Derzhava.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Derzhava.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5EA2F3125509818004F823C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F5EA2F3325509818004F823C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -932,6 +934,7 @@
 			isa = PBXGroup;
 			children = (
 				F55F161325C1FBF9006EE790 /* Fonts */,
+				F5E990B625DF055600D62B1D /* Colors.swift */,
 				F5EA2F3125509818004F823C /* AppDelegate.swift */,
 				F5EA2F3325509818004F823C /* SceneDelegate.swift */,
 				F5EA2F3A25509822004F823C /* Assets.xcassets */,
@@ -1167,6 +1170,7 @@
 				F55BFD8A257C3B0100D88A83 /* FullInformationAboutUserViewController.swift in Sources */,
 				F51FCFE025607B96005D280A /* ChangeSubjectTableViewCell.swift in Sources */,
 				F59ABB6C25AA876A002FACD2 /* TimeAndPriceForPublicationsViewController.swift in Sources */,
+				F5E990B725DF055600D62B1D /* Colors.swift in Sources */,
 				F547236B258302B30056CB6F /* FullNewsViewController.swift in Sources */,
 				F5472399259E283B0056CB6F /* MakeNewsViewController.swift in Sources */,
 				F506608225DDC1B90072CA4A /* CallForDebateModel.swift in Sources */,

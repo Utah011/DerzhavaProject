@@ -7,64 +7,21 @@
 //
 
 
-//Переопределить все методы , написать их корректно!
 import UIKit
-//import TinyConstraints
-
-
 
 class DebateViewController: UIViewController, UIScrollViewDelegate {
     
     let contentView = DebateScreenView()
     var lastContentOffset: CGFloat = 0
-//    var col = NSLayoutConstraint()
-    
     var selectedIndex: IndexPath?
 
-    
-//    let collectionThemeView:UICollectionView = {
-//        let layout = UICollectionViewFlowLayout()
-//        layout.minimumLineSpacing = 15
-//        layout.scrollDirection = .horizontal
-//        let clv = UICollectionView(frame: .zero, collectionViewLayout: layout)
-//        clv.translatesAutoresizingMaskIntoConstraints = false
-//        clv.backgroundColor = UIColor(red: 249, green: 249, blue: 249, alpha: 0)
-//        clv.showsHorizontalScrollIndicator = false
-//        return clv
-//    }()
-//
-//    let tableThemeView:UITableView = {
-//        let table = UITableView()
-//        table.translatesAutoresizingMaskIntoConstraints = false
-//        table.separatorStyle = .none
-//        table.isScrollEnabled = true
-//        table.backgroundColor = #colorLiteral(red: 0.9568627451, green: 0.9568627451, blue: 0.9568627451, alpha: 1)
-//        return table
-//    }()
-//
-//    let titleLabelForNavController:UILabel = {
-//        let lbl = UILabel()
-//        lbl.translatesAutoresizingMaskIntoConstraints = false
-//        lbl.text = "Дебаты"
-//        lbl.font = UIFont(name: "SFProDisplay-Bold", size: 34)
-//        lbl.textColor = .black
-//        return lbl
-//    }()
-    
-//    let debateCell = DebateTableViewCell()
-//    let nc = NotificationCenter.default
-
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = #colorLiteral(red: 0.9568627451, green: 0.9568627451, blue: 0.9568627451, alpha: 1)
-//        print("Heith of text is - \(debateCell.mainTextLabel.frame.height)")
+        view.backgroundColor = Colors.background
         exampleAnswers()
         setNavigationController()
-//        addSubViews()
         setCollectionView()
         setTableView()
-//        setConstrains()
         
         if UserDefaults.standard.bool(forKey: "isUserLoggedIn"){
             arrayOfThemes.insert("Ответы", at: 0)
@@ -82,22 +39,17 @@ class DebateViewController: UIViewController, UIScrollViewDelegate {
         let editingVC = CallForDebateViewController()
         self.navigationController?.pushViewController(editingVC, animated: true)
     }
-
-        
-//    func addSubViews(){
-//        [titleLabelForNavController,collectionThemeView,tableThemeView].forEach{self.view.addSubview($0)}
-//    }
     
     func setNavigationController(){
         navigationController?.setNavigationBarHidden(false, animated: true)
-        navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.9568627451, green: 0.9568627451, blue: 0.9568627451, alpha: 1)
-        navigationController?.navigationBar.shadowImage = UIImage(named: "nav")
+        navigationController?.navigationBar.barTintColor = Colors.background
+        navigationController?.navigationBar.shadowImage = UIImage(named: "navShadowImage")
         
         let backItem = UIBarButtonItem()
         backItem.title = "Назад"
         
         navigationItem.backBarButtonItem = backItem
-        navigationItem.backBarButtonItem?.tintColor = #colorLiteral(red: 0.2509803922, green: 0.3294117647, blue: 0.6980392157, alpha: 1)
+        navigationItem.backBarButtonItem?.tintColor = Colors.darkBlue
         navigationItem.rightBarButtonItem?.title = "События"
         
         if UserDefaults.standard.bool(forKey: "isUserLoggedIn"){
@@ -106,32 +58,14 @@ class DebateViewController: UIViewController, UIScrollViewDelegate {
             navigationItem.rightBarButtonItem = UIBarButtonItem(title: "События", style: .plain, target: self, action: #selector(goToDebateEventsScreen))
             print("YOU ARE IN!")
         }
-        navigationItem.leftBarButtonItem?.tintColor = #colorLiteral(red: 0.2509803922, green: 0.3294117647, blue: 0.6980392157, alpha: 1)
-        navigationItem.rightBarButtonItem?.tintColor = #colorLiteral(red: 0.2509803922, green: 0.3294117647, blue: 0.6980392157, alpha: 1)
+        navigationItem.leftBarButtonItem?.tintColor = Colors.darkBlue
+        navigationItem.rightBarButtonItem?.tintColor = Colors.darkBlue
     }
     
     @objc
     func nothingHere(){
         
     }
-    
-//    func setConstrains(){
-//
-//        let col = collectionThemeView.topAnchor.constraint(equalTo: view.topAnchor, constant: 150)
-//        col.isActive = true
-//        collectionThemeView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0).isActive = true
-//        collectionThemeView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0).isActive = true
-//        collectionThemeView.heightAnchor.constraint(equalToConstant: 38).isActive = true
-//
-//        titleLabelForNavController.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16).isActive = true
-//        titleLabelForNavController.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
-//        titleLabelForNavController.bottomAnchor.constraint(equalTo: collectionThemeView.topAnchor, constant: -21).isActive = true
-//
-//        tableThemeView.topAnchor.constraint(equalTo: collectionThemeView.bottomAnchor, constant: 20).isActive = true
-//        tableThemeView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
-//        tableThemeView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
-//
-//    }
     
     func setCollectionView(){
         contentView.collectionThemeView.delegate = self
@@ -175,11 +109,11 @@ extension DebateViewController: UICollectionViewDelegateFlowLayout, UICollection
         cell.firstSubjectLabel.text = arrayOfThemes[indexPath.row]
         
         if indexPath == selectedIndex {
-            cell.firstSubjectLabel.backgroundColor = #colorLiteral(red: 0.2509803922, green: 0.3294117647, blue: 0.6980392157, alpha: 1)
+            cell.firstSubjectLabel.backgroundColor = Colors.darkBlue
             cell.firstSubjectLabel.textColor = . white
         } else {
-            cell.firstSubjectLabel.backgroundColor = #colorLiteral(red: 0.9568627451, green: 0.9568627451, blue: 0.9568627451, alpha: 1)
-            cell.firstSubjectLabel.textColor = #colorLiteral(red: 0.2509803922, green: 0.3294117647, blue: 0.6980392157, alpha: 1)
+            cell.firstSubjectLabel.backgroundColor = Colors.background
+            cell.firstSubjectLabel.textColor = Colors.darkBlue
         }
         
         return cell
@@ -230,7 +164,6 @@ extension DebateViewController: UITableViewDelegate, UITableViewDataSource {
         if self.lastContentOffset < scrollView.contentOffset.y {
             // did move up
             print("\nMOVE DOWN")
-            //navigationController?.navigationBar.backgroundColor = .red
             
             contentView.titleLabelForNavController.isHidden = true
             
@@ -246,7 +179,6 @@ extension DebateViewController: UITableViewDelegate, UITableViewDataSource {
         } else if self.lastContentOffset > scrollView.contentOffset.y {
             // did move down
             print("\nMOVE UP")
-            //navigationController?.navigationBar.backgroundColor = .green
             
             contentView.titleLabelForNavController.isHidden = false
 

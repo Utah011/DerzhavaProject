@@ -24,7 +24,6 @@ class FullNewsCollectionViewCell: UICollectionViewCell {
         iv.translatesAutoresizingMaskIntoConstraints = false
         iv.contentMode = .scaleAspectFill
         iv.clipsToBounds = true
-//        iv.layer.cornerRadius = iv.frame.size.width / 2
         iv.layer.cornerRadius = 32.5
         return iv
     }()
@@ -35,9 +34,8 @@ class FullNewsCollectionViewCell: UICollectionViewCell {
         lbl.textAlignment = .center
         lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.font = UIFont(name: "SFProText-Regular", size: 11)
-        lbl.textColor = .black
+        lbl.textColor = Colors.black
         lbl.lineBreakMode = .byTruncatingTail
-//        lbl.backgroundColor = .blue
         return lbl
     }()
     
@@ -60,8 +58,6 @@ class FullNewsCollectionViewCell: UICollectionViewCell {
         nameSurnameLabel.topAnchor.constraint(equalTo: bg.bottomAnchor, constant: 10).isActive = true
         nameSurnameLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor).isActive = true
         nameSurnameLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor).isActive = true
-//        nameSurnameLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
-
     }
     
     required init?(coder: NSCoder) {

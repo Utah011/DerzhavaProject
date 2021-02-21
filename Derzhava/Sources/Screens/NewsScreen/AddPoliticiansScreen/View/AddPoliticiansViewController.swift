@@ -13,13 +13,6 @@ class AddPoliticiansViewController: UIViewController, UISearchBarDelegate {
     let contentView = AddPoliticiansScreenView()
     let searchController = UISearchController(searchResultsController: nil)
     
-//    let tableview:UITableView = {
-//        let table = UITableView()
-//        table.translatesAutoresizingMaskIntoConstraints = false
-//        table.separatorStyle = .singleLine
-//        return table
-//    }()
-    
     var labelArrat = ["Леонид Вологидин","Иван Волкодавский","Анатолий Велин","Владимир Истошев","Леонид Вологидин","Ксения Собчак"]
     
     let imageArray:[UIImage] = [UIImage(named: "varlamov")!,UIImage(named: "polit")!,UIImage(named: "zhirinovskiy")!,UIImage(named: "milonov")!,UIImage(named: "sil")!, UIImage(named: "sobchak")!]
@@ -34,8 +27,6 @@ class AddPoliticiansViewController: UIViewController, UISearchBarDelegate {
         
         setNavigationController()
         setTableView()
-//        addSubviews()
-//        setConstraint()
     }
     
     override func loadView() {
@@ -47,16 +38,16 @@ class AddPoliticiansViewController: UIViewController, UISearchBarDelegate {
         navigationItem.title = ""
         navigationItem.largeTitleDisplayMode = .never
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Подтвердить", style: .plain, target: self, action: #selector(saveButtonTapped))
-        navigationItem.rightBarButtonItem?.tintColor = #colorLiteral(red: 0.2509803922, green: 0.3294117647, blue: 0.6980392157, alpha: 1)
+        navigationItem.rightBarButtonItem?.tintColor = Colors.darkBlue
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Отмена", style: .plain, target: self, action: #selector(close))
-        navigationItem.leftBarButtonItem?.tintColor = .black
+        navigationItem.leftBarButtonItem?.tintColor = Colors.black
         
         navigationItem.searchController = searchController
         searchController.searchBar.delegate = self
         searchController.searchBar.placeholder = "Поиск"
         searchController.searchBar.setValue("Назад", forKey: "cancelButtonText")
-        searchController.searchBar.tintColor = #colorLiteral(red: 0.2509803922, green: 0.3294117647, blue: 0.6980392157, alpha: 1)
+        searchController.searchBar.tintColor = Colors.darkBlue
         navigationItem.setHidesBackButton(false, animated: true)
     }
     
@@ -69,17 +60,6 @@ class AddPoliticiansViewController: UIViewController, UISearchBarDelegate {
     func saveButtonTapped(){
         self.navigationController?.popViewController(animated: true)
     }
-    
-//    func setConstraint(){
-//        tableview.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
-//        tableview.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0).isActive = true
-//        tableview.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0).isActive = true
-//        tableview.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
-//    }
-//
-//    func addSubviews(){
-//        [tableview].forEach{self.view.addSubview($0)}
-//    }
     
     func setTableView(){
         contentView.tableview.delegate = self

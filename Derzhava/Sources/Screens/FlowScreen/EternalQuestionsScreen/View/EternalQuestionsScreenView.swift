@@ -23,7 +23,7 @@ class EternalQuestionsScreenView: UIView {
         
         collectionViewEternalQuestions = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionViewEternalQuestions.translatesAutoresizingMaskIntoConstraints = false
-        collectionViewEternalQuestions.backgroundColor = #colorLiteral(red: 0.9568627451, green: 0.9568627451, blue: 0.9568627451, alpha: 1)
+        collectionViewEternalQuestions.backgroundColor = Colors.background
         collectionViewEternalQuestions.showsHorizontalScrollIndicator = false
         addSubview(collectionViewEternalQuestions)
     }

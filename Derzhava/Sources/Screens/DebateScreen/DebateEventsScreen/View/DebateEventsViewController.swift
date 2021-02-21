@@ -11,25 +11,13 @@ import UIKit
 class DebateEventsViewController: UIViewController {
     
     let contentView = DebateEventsScreenView()
-    
-//    let tableview:UITableView = {
-//        let table = UITableView()
-//        table.translatesAutoresizingMaskIntoConstraints = false
-//        table.separatorStyle = .singleLine
-//        table.isScrollEnabled = true
-//        table.allowsSelection = false
-//        return table
-//    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = #colorLiteral(red: 0.9529411765, green: 0.9568627451, blue: 0.9607843137, alpha: 1)
+        view.backgroundColor = Colors.background
 
-        
         setNavigationController()
         setTableView()
-//        addSubViews()
-//        setConstrains()
     }
     
     override func loadView() {
@@ -40,18 +28,7 @@ class DebateEventsViewController: UIViewController {
         navigationController?.setNavigationBarHidden(false, animated: true)
         navigationItem.title = "События"
         navigationItem.largeTitleDisplayMode = .never
-        //navigationController?.navigationBar.shadowImage = UIImage(named: "exampleshadowline")
     }
-    
-//    func addSubViews(){
-//        [tableview].forEach{self.view.addSubview($0)}
-//    }
-    
-//    func setConstrains(){
-//        tableview.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
-//        tableview.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
-//        tableview.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
-//    }
     
     func setTableView(){
         contentView.tableview.delegate = self
@@ -59,8 +36,6 @@ class DebateEventsViewController: UIViewController {
         contentView.tableview.register(AuthorDebateTableViewCell.self, forCellReuseIdentifier: "AuthorDebateTableViewCell")
         contentView.tableview.register(MyCustomHeaderForFullNews.self, forHeaderFooterViewReuseIdentifier: "MyCustomHeaderForFullNews")
     }
-
-
 }
 
 extension DebateEventsViewController: UITableViewDelegate, UITableViewDataSource {

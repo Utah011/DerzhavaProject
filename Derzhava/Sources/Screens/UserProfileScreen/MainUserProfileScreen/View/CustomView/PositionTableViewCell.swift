@@ -8,14 +8,11 @@
 
 import UIKit
 
-//import ExpandableLabel
-
 class PositionTableViewCell: UITableViewCell {
     
     let photoImageView:UIImageView = {
         let img = UIImageView()
         img.clipsToBounds = true
-        //img.image = UIImage(named: "polit")
         img.translatesAutoresizingMaskIntoConstraints = false
         img.layer.cornerRadius = 25
         img.contentMode = .scaleAspectFill
@@ -25,20 +22,16 @@ class PositionTableViewCell: UITableViewCell {
     let secondPhotoImageView:UIImageView = {
         let img = UIImageView()
         img.clipsToBounds = true
-        //img.image = UIImage(named: "polit")
         img.translatesAutoresizingMaskIntoConstraints = false
         img.layer.cornerRadius = 25
         img.contentMode = .scaleAspectFill
         return img
     }()
     
-    
     let bottomView:UIView = {
         let view = UIView()
-        view.backgroundColor = .white
+        view.backgroundColor = Colors.white
         view.translatesAutoresizingMaskIntoConstraints = false
-        //view.layer.cornerRadius = 16
-        //view.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
         return view
     }()
 
@@ -48,10 +41,8 @@ class PositionTableViewCell: UITableViewCell {
         lbl.textAlignment = .left
         lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.font = UIFont(name: "SFProDisplay-Semibold", size: 20)
-        //lbl.font = lbl.font.withSize(20)
-        lbl.textColor = .black
+        lbl.textColor = Colors.black
         lbl.lineBreakMode = .byTruncatingTail
-        //lbl.text = "Иван Волкодавский"
         return lbl
     }()
     
@@ -61,8 +52,6 @@ class PositionTableViewCell: UITableViewCell {
         lbl.textAlignment = .left
         lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.font = UIFont(name: "SFProText-Regular", size: 11)
-        //lbl.frame = CGRect(x:0,y:0,width:lbl.intrinsicContentSize.width,height:lbl.intrinsicContentSize.height)
-        //lbl.text = "Председатель правления Приморского края"
         lbl.text = "Сегодня в 14:20"
         lbl.lineBreakMode = .byWordWrapping
         lbl.textColor = #colorLiteral(red: 0.5411764706, green: 0.5411764706, blue: 0.5411764706, alpha: 1)
@@ -75,10 +64,8 @@ class PositionTableViewCell: UITableViewCell {
         lbl.textAlignment = .left
         lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.font = UIFont(name: "SFProDisplay-Semibold", size: 20)
-        //lbl.font = lbl.font.withSize(20)
-        lbl.textColor = .black
+        lbl.textColor = Colors.black
         lbl.lineBreakMode = .byTruncatingTail
-        //lbl.text = "Иван Волкодавский"
         return lbl
     }()
     
@@ -88,8 +75,6 @@ class PositionTableViewCell: UITableViewCell {
         lbl.textAlignment = .left
         lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.font = UIFont(name: "SFProText-Regular", size: 11)
-        //lbl.frame = CGRect(x:0,y:0,width:lbl.intrinsicContentSize.width,height:lbl.intrinsicContentSize.height)
-        //lbl.text = "Председатель правления Приморского края"
         lbl.text = "Сегодня в 14:20"
         lbl.lineBreakMode = .byWordWrapping
         lbl.textColor = #colorLiteral(red: 0.5411764706, green: 0.5411764706, blue: 0.5411764706, alpha: 1)
@@ -100,14 +85,14 @@ class PositionTableViewCell: UITableViewCell {
     let mainView:UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .white
+        view.backgroundColor = Colors.white
         return view
     }()
     
     let separateView:UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = #colorLiteral(red: 0.9529411765, green: 0.9568627451, blue: 0.9607843137, alpha: 1)
+        view.backgroundColor = Colors.background
         return view
     }()
     
@@ -131,11 +116,9 @@ class PositionTableViewCell: UITableViewCell {
         lbl.textAlignment = .left
         lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.font = UIFont(name: "SFProDisplay-Bold", size: 20)
-        //lbl.frame = CGRect(x:0,y:0,width:lbl.intrinsicContentSize.width,height:lbl.intrinsicContentSize.height)
-        //lbl.text = "Председатель правления Приморского края"
         lbl.text = "Состояние Трампа внушает большое беспокойство"
         lbl.lineBreakMode = .byTruncatingTail
-        lbl.textColor = .white
+        lbl.textColor = Colors.white
         return lbl
     }()
     
@@ -145,9 +128,7 @@ class PositionTableViewCell: UITableViewCell {
         lbl.textAlignment = .left
         lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.font = UIFont(name: "SFProText-Regular", size: 17)
-        lbl.textColor = .black
-        //lbl.frame = CGRect(x:0,y:0,width:lbl.intrinsicContentSize.width,height:lbl.intrinsicContentSize.height)
-//        lbl.text = "Источник, знакомый с состоянием здоровья заболевшего COVID-19 президента США Дональда Трампа, заявил журналистам, что его показатели за последние сутки внушали большое беспокойство. Последующие 48 часов будут критически важны с точки зрения его лечения. Мы еще пока не стоим на четком пути к полному выздоровлению — заявил источник, Источник, знакомый с состоянием здоровья заболевшего COVID-19 президента США Дональда Трампа, заявил журналистам, что его показатели за последние сутки внушали большое беспокойство. Последующие 48 часов будут критически важны с точки зрения его лечения. Мы еще пока не стоим на четком пути к полному выздоровлению — заявил источник Источник, знакомый с состоянием здоровья заболевшего COVID-19 президента США Дональда Трампа, заявил журналистам, что его показатели за последние сутки внушали большое беспокойство. Последующие 48 часов будут критически важны с точки зрения его лечения. Мы еще пока не стоим на четком пути к полному выздоровлению — заявил источник."
+        lbl.textColor = Colors.black
         lbl.lineBreakMode = .byTruncatingTail
         return lbl
     }()
@@ -155,22 +136,19 @@ class PositionTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
+        addSubviews()
+        setConstraints()
+    }
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func addSubviews(){
         contentView.addSubview(mainView)
         contentView.addSubview(separateView)
         [photoImageView,nameLabel,positionLabel,lineView,newsImageView,secondPhotoImageView,secondNameLabel,secondPositionLabel,mainTextLabel].forEach{self.mainView.addSubview($0)}
         
         newsImageView.addSubview(headingForNews)
-
-        
-        setConstraints()
-        
-//                let heightOfCellText = adressLabel.systemLayoutSizeFitting(CGSize(width: contentView.frame.width, height: UIView.layoutFittingCompressedSize.height), withHorizontalFittingPriority: .required, verticalFittingPriority: .fittingSizeLevel).height
-        //print("height of the cell \(heightOfCellText)")
-        
-    }
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 
     func setConstraints(){
@@ -236,8 +214,6 @@ class PositionTableViewCell: UITableViewCell {
         
         mainTextLabel.topAnchor.constraint(equalTo: secondNameLabel.bottomAnchor,constant: 31).isActive = true
         mainTextLabel.leftAnchor.constraint(equalTo: secondPhotoImageView.rightAnchor, constant: 10).isActive = true
-        //mainTextLabel.heightAnchor.constraint(equalToConstant: 22).isActive = true
-        //mainTextLabel.widthAnchor.constraint(equalToConstant: 260).isActive = true
         mainTextLabel.bottomAnchor.constraint(equalTo: separateView.topAnchor, constant: -6).isActive = true
         mainTextLabel.rightAnchor.constraint(equalTo: mainView.rightAnchor, constant: -8).isActive = true
     }

@@ -13,7 +13,6 @@ class MakeATwitViewController: UIViewController, UIImagePickerControllerDelegate
     let scrollview:UIScrollView = {
         let view = UIScrollView()
         view.translatesAutoresizingMaskIntoConstraints = false
-//        view.backgroundColor = .systemYellow
         return view
     }()
     
@@ -32,7 +31,6 @@ class MakeATwitViewController: UIViewController, UIImagePickerControllerDelegate
         let txt = UITextView()
         txt.translatesAutoresizingMaskIntoConstraints = false
         txt.font = UIFont(name: "SFProText-Regular", size: 17)
-//        txt.backgroundColor = .purple
         txt.backgroundColor = .none
         txt.text = "Напишите твит"
         txt.textColor = UIColor.lightGray
@@ -64,7 +62,6 @@ class MakeATwitViewController: UIViewController, UIImagePickerControllerDelegate
     let numberOfCharactersLabel:UILabel = {
         let lbl = UILabel()
         lbl.translatesAutoresizingMaskIntoConstraints = false
-//        lbl.backgroundColor = .systemRed
         lbl.text = "0/500"
         lbl.font = UIFont(name: "SFProText-Regular", size: 12)
         lbl.textColor = #colorLiteral(red: 0.5411764706, green: 0.5411764706, blue: 0.5411764706, alpha: 1)
@@ -85,7 +82,7 @@ class MakeATwitViewController: UIViewController, UIImagePickerControllerDelegate
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = #colorLiteral(red: 0.9803921569, green: 0.9803921569, blue: 0.9803921569, alpha: 1)
+        view.backgroundColor = Colors.background
         
         let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
         view.addGestureRecognizer(tap)
@@ -101,10 +98,10 @@ class MakeATwitViewController: UIViewController, UIImagePickerControllerDelegate
         navigationItem.title = ""
         navigationItem.largeTitleDisplayMode = .never
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Создать", style: .plain, target: self, action: #selector(nothingHere))
-        navigationItem.rightBarButtonItem?.tintColor = #colorLiteral(red: 0.2509803922, green: 0.3294117647, blue: 0.6980392157, alpha: 1)
+        navigationItem.rightBarButtonItem?.tintColor = Colors.darkBlue
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Отмена", style: .plain, target: self, action: #selector(close))
-        navigationItem.leftBarButtonItem?.tintColor = .black
+        navigationItem.leftBarButtonItem?.tintColor = Colors.black
     }
     
     @objc
@@ -131,14 +128,11 @@ class MakeATwitViewController: UIViewController, UIImagePickerControllerDelegate
         numberOfCharactersLabel.topAnchor.constraint(equalTo: scrollview.topAnchor, constant: 10).isActive = true
         numberOfCharactersLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -15).isActive = true
         
-//        userImageView.topAnchor.constraint(equalTo: scrollview.topAnchor, constant: 40).isActive = true
         userImageView.topAnchor.constraint(equalTo: twitTextView.topAnchor, constant: 4).isActive = true
         userImageView.leftAnchor.constraint(equalTo: view.leftAnchor,constant: 16).isActive = true
         userImageView.widthAnchor.constraint(equalToConstant: 30).isActive = true
         userImageView.heightAnchor.constraint(equalToConstant: 30).isActive = true
         
-//        twitTextView.topAnchor.constraint(equalTo: scrollview.topAnchor, constant: 37).isActive = true
-//        twitTextView.topAnchor.constraint(equalTo: twitImageView.bottomAnchor, constant: 10).isActive = true
         twitTextView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 61).isActive = true
         twitTextView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -14).isActive = true
         twitTextView.heightAnchor.constraint(equalToConstant: 40).isActive = true
@@ -210,10 +204,7 @@ class MakeATwitViewController: UIViewController, UIImagePickerControllerDelegate
     func deleteImageAction(){
         twitImageView.isHidden = true
         deleteImageButton.isHidden = true
-//        view.removeConstraint(heightConstraintForTitle)
         heightConstraintForTwitImageView.constant = 10
-//        print(newsImageView.frame.height)
-//        print(heightConstraintForTitle.constant)
         
         self.twitTextView.openGallaryButton(title: "Прикрепить изображение", target: self, selector: #selector(openGallery))
         twitTextView.resignFirstResponder()
@@ -249,18 +240,10 @@ extension MakeATwitViewController: UITextViewDelegate {
         
         if twitTextView.text.count < 14 && heightConstraintForTwitImageView.constant < 150 {
             NSLayoutConstraint.deactivate(allconb)
-//            twitImageView.topAnchor.constraint(equalTo: scrollview.topAnchor, constant: 15).isActive = true
-//            twitImageView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 60).isActive = true
-//            twitImageView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -15).isActive = true
-//            twitImageView.heightAnchor.constraint(equalToConstant: 10).isActive = true
             NSLayoutConstraint.activate(allcon)
         } else if heightConstraintForTwitImageView.constant < 150 {
             NSLayoutConstraint.deactivate(allcon)
             NSLayoutConstraint.activate(allconb)
-//            twitImageView.topAnchor.constraint(equalTo: twitTextView.bottomAnchor, constant: 21).isActive = true
-//            twitImageView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 60).isActive = true
-//            twitImageView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -15).isActive = true
-//            twitImageView.heightAnchor.constraint(equalToConstant: 10).isActive = true
         }
         
     }
@@ -269,7 +252,7 @@ extension MakeATwitViewController: UITextViewDelegate {
         if textView == textView {
             if textView.textColor == UIColor.lightGray {
                 textView.text = nil
-                textView.textColor = UIColor.black
+                textView.textColor = Colors.black
             }
         }
     }

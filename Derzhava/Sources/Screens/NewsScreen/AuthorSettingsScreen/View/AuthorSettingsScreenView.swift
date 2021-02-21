@@ -19,7 +19,7 @@ class AuthorSettingsScreenView: UIView {
         
         tableview.translatesAutoresizingMaskIntoConstraints = false
         tableview.separatorStyle = .none
-        tableview.backgroundColor = #colorLiteral(red: 0.9529411765, green: 0.9568627451, blue: 0.9607843137, alpha: 1)
+        tableview.backgroundColor = Colors.background
         addSubview(tableview)
     }
     

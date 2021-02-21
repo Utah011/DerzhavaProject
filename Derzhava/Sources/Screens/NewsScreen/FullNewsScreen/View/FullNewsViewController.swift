@@ -13,61 +13,15 @@ class FullNewsViewController: UIViewController {
     let contentView = FullNewsScreenView()
     var lastContentOffset: CGFloat = 0
     var selectedIndex = IndexPath()
-    
-    
-//    let tableview:UITableView = {
-//        let table = UITableView()
-//        table.translatesAutoresizingMaskIntoConstraints = false
-//        table.separatorStyle = .singleLine
-//        table.backgroundColor = #colorLiteral(red: 0.9568627451, green: 0.9568627451, blue: 0.9568627451, alpha: 1)
-//        return table
-//    }()
-//
-//    let footerForTableView:UIView = {
-//        let view = UIView()
-//        view.backgroundColor = #colorLiteral(red: 0.9568627451, green: 0.9568627451, blue: 0.9568627451, alpha: 1)
-//        view.layer.borderWidth = 0.5
-//        view.layer.borderColor = #colorLiteral(red: 0.7764705882, green: 0.7764705882, blue: 0.7843137255, alpha: 1)
-//        return view
-//    }()
-//
-//    let footerPhotoForTableView:UIImageView = {
-//        let img = UIImageView()
-//        img.image = UIImage(named: "polit")
-//        img.clipsToBounds = true
-//        img.layer.cornerRadius = 16
-//        img.contentMode = .scaleAspectFill
-//        return img
-//    }()
-//
-//    let footerTextFieldForTableView:UITextField = {
-//        let txt = UITextField()
-//        txt.placeholder = "Напишите ответ"
-//        txt.clipsToBounds = true
-//        txt.layer.cornerRadius = 10
-//        txt.backgroundColor = .white
-//        txt.layer.borderWidth = 1
-//        txt.layer.borderColor = #colorLiteral(red: 0.862745098, green: 0.862745098, blue: 0.8666666667, alpha: 1)
-//        return txt
-//    }()
-//
-//    let footerButtonForTableView:UIButton = {
-//        let btn = UIButton()
-//        btn.setImage(UIImage(named: "arrowforopinion"), for: .normal)
-//        return btn
-//    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = #colorLiteral(red: 0.9568627451, green: 0.9568627451, blue: 0.9568627451, alpha: 1)
+        view.backgroundColor = Colors.background
                 
         exampleFilling()
         exampleAnswers()
         setNavigationController()
         settingTableView()
-//        addAllSubviews()
-//        setConstrains()
-        
     }
     
     override func loadView() {
@@ -77,18 +31,6 @@ class FullNewsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         flag = 0
     }
-    
-//    @objc
-//    func changeColor(){
-//        tableview.backgroundColor = .green
-//        view.backgroundColor = .blue
-//        print("CHANGE THE COLOR MAN")
-//    }
-    
-//    func addAllSubviews(){
-//        [tableview].forEach{self.view.addSubview($0)}
-//        [footerPhotoForTableView,footerTextFieldForTableView,footerButtonForTableView].forEach{self.footerForTableView.addSubview($0)}
-//    }
     
     func setNavigationController(){
         navigationController?.setNavigationBarHidden(false, animated: true)
@@ -104,7 +46,7 @@ class FullNewsViewController: UIViewController {
         let backItem = UIBarButtonItem()
         backItem.title = "Назад"
         navigationItem.backBarButtonItem = backItem
-        navigationItem.backBarButtonItem?.tintColor = #colorLiteral(red: 0.2509803922, green: 0.3294117647, blue: 0.6980392157, alpha: 1)
+        navigationItem.backBarButtonItem?.tintColor = Colors.darkBlue
     }
     
     @objc
@@ -120,19 +62,7 @@ class FullNewsViewController: UIViewController {
         contentView.tableview.register(ThisIsIt.self, forCellReuseIdentifier: "ThisIsIt")
         contentView.tableview.register(MyCustomHeaderForFullNews.self, forHeaderFooterViewReuseIdentifier: "MyCustomHeaderForFullNews")
         contentView.tableview.register(MyCustomSearchFooterForFullNews.self, forHeaderFooterViewReuseIdentifier: "MyCustomSearchFooterForFullNews")
-        
-//        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 16, height: self.footerTextFieldForTableView.frame.height))
-//        footerTextFieldForTableView.leftView = paddingView
-//        footerTextFieldForTableView.leftViewMode = UITextField.ViewMode.always
-        
     }
-    
-//    func setConstrains(){
-//        tableview.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
-//        tableview.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0).isActive = true
-//        tableview.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0).isActive = true
-//        tableview.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
-//    }
     
     func heightForView(text:String, font:UIFont) -> CGFloat{
         let label:UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: view.frame.width - 30, height: CGFloat.greatestFiniteMagnitude))
@@ -238,19 +168,10 @@ extension FullNewsViewController: UITableViewDelegate, UITableViewDataSource {
         switch indexPath.section {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "FullNewsTableViewCell") as! FullNewsTableViewCell
-//            cell.photoImageView.image = newsArray[indexPath.row].photo
-//            cell.headlineLabel.text = newsArray[indexPath.row].newstitle
-//            cell.mainTextLabel.text = newsArray[indexPath.row].newstext
             cell.configure(with: NewsViewModel(with: newsModel))
             return cell
         case 1:
             let cellAnswers = tableView.dequeueReusableCell(withIdentifier: "ThisIsIt", for: indexPath) as! ThisIsIt
-
-//            cell.photoImageView.image = answersArray[indexPath.row].photo
-//            cell.nameLabel.text = answersArray[indexPath.row].namesurname
-//            cell.adressLabel.text = answersArray[indexPath.row].maintext
-//            cell.positionLabel.text = answersArray[indexPath.row].position
-//            cell.timeLabel.text = answersArray[indexPath.row].time
             cellAnswers.configure(with: AnswersViewModel(with: answerModel))
             
             if selectedIndex == indexPath {
@@ -262,12 +183,6 @@ extension FullNewsViewController: UITableViewDelegate, UITableViewDataSource {
             return cellAnswers
         default:
             let cellOpinions = tableView.dequeueReusableCell(withIdentifier: "ThisIsIt", for: indexPath) as! ThisIsIt
-
-//            cellOpinions.photoImageView.image = secondAnswersArray[indexPath.row].photo
-//            cellOpinions.nameLabel.text = secondAnswersArray[indexPath.row].namesurname
-//            cellOpinions.adressLabel.text = secondAnswersArray[indexPath.row].maintext
-//            cellOpinions.positionLabel.text = secondAnswersArray[indexPath.row].position
-//            cellOpinions.timeLabel.text = secondAnswersArray[indexPath.row].time
             cellOpinions.configure(with: AnswersViewModel(with: secondAnswerModel))
             
             if selectedIndex == indexPath {
@@ -391,27 +306,6 @@ extension FullNewsViewController: UITableViewDelegate, UITableViewDataSource {
             
         }
     }
-    
-//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        if self.lastContentOffset < scrollView.contentOffset.y {
-//            // did move up
-//            print("\nMOVE DOWN")
-//            navigationController?.navigationBar.backgroundColor = .red
-//            navigationController?.setNavigationBarHidden(true, animated: true)
-//
-//
-//        } else if self.lastContentOffset > scrollView.contentOffset.y {
-//            // did move down
-//            print("\nMOVE UP")
-//            navigationController?.navigationBar.backgroundColor = .green
-//            navigationController?.setNavigationBarHidden(false, animated: true)
-//
-//
-//        } else {
-//            // didn't move
-//            print("\nDON'T MOOOOVE")
-//        }
-//    }
     
 }
 

@@ -7,15 +7,13 @@
 //
 
 import Foundation
-
 import UIKit
-//главный
+
 class StatusAndPublicationsTableViewCell: UITableViewCell {
     
     var photoImageView:UIImageView = {
         let imgview = UIImageView()
         imgview.translatesAutoresizingMaskIntoConstraints = false
-//        imgview.image = UIImage(named: "newspicture")
         return imgview
     }()
     
@@ -23,7 +21,6 @@ class StatusAndPublicationsTableViewCell: UITableViewCell {
         let lbl = UILabel()
         lbl.numberOfLines = 2
         lbl.translatesAutoresizingMaskIntoConstraints = false
-//        lbl.text = "Главные события одиннадцатого дня протестов в Белоруссии"
         lbl.font = UIFont(name: "SFProDisplay-SemiBold", size: 15)
         return lbl
     }()
@@ -51,14 +48,13 @@ class StatusAndPublicationsTableViewCell: UITableViewCell {
     let bottomView:UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = #colorLiteral(red: 0.9568627451, green: 0.9568627451, blue: 0.9568627451, alpha: 1)
+        view.backgroundColor = Colors.background
         return view
     }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        contentView.backgroundColor = .white
-//        contentView.backgroundColor = .systemBlue
+        contentView.backgroundColor = Colors.white
         addSubviews()
         setConstrains()
     }

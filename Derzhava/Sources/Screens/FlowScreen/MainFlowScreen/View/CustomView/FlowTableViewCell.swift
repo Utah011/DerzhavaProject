@@ -22,7 +22,7 @@ class FlowTableViewCell: UITableViewCell {
         layout.scrollDirection = .horizontal
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.translatesAutoresizingMaskIntoConstraints = false
-        cv.backgroundColor = #colorLiteral(red: 0.9568627451, green: 0.9568627451, blue: 0.9568627451, alpha: 1)
+        cv.backgroundColor = Colors.background
         cv.showsHorizontalScrollIndicator = false
         cv.clipsToBounds = true
         cv.layer.cornerRadius = 10
@@ -43,7 +43,6 @@ class FlowTableViewCell: UITableViewCell {
     
     func addSubviews(){
         [collectionViewEternalQuestions].forEach{self.contentView.addSubview($0)}
-//        [collectionViewEternalQuestions].forEach{self.container.addSubview($0)}
     }
     
     func setCollectionView(){
@@ -53,10 +52,6 @@ class FlowTableViewCell: UITableViewCell {
     }
     
     func setConstrains(){
-//        container.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0).isActive = true
-//        container.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 0).isActive = true
-//        container.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: 0).isActive = true
-//        container.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 0).isActive = true
         
         collectionViewEternalQuestions.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0).isActive = true
         collectionViewEternalQuestions.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 0).isActive = true
@@ -77,11 +72,6 @@ class FlowTableViewCell: UITableViewCell {
 }
 
 extension FlowTableViewCell: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
-    
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        collectionView.contentInset.left = 15
-//        return CGSize(width: 325, height: 281)
-//    }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
@@ -108,8 +98,6 @@ extension FlowTableViewCell: UICollectionViewDelegateFlowLayout, UICollectionVie
         
         let eternalQuestionModel = eternalQuestionsArray[indexPath.row]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FlowCollectionViewCell", for: indexPath) as! FlowCollectionViewCell
-//        cell.titleLabel.text = eternalQuestionsArray[indexPath.row].title
-//        cell.mainTextLabel.text = eternalQuestionsArray[indexPath.row].maintext
         cell.configure(with: EternalQuestionsViewModel(with: eternalQuestionModel))
         cell.contentView.clipsToBounds = true
         cell.contentView.layer.cornerRadius = 10
@@ -120,8 +108,6 @@ extension FlowTableViewCell: UICollectionViewDelegateFlowLayout, UICollectionVie
     
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let defaulVC = EternalQuestionsViewController()
-//        self.navigationController.pushViewController(defaulVC, animated: true)
         delegate?.didSelectIndex(indexPath)
         print("\nNUMBER OF CELL - \(indexPath)")
     }

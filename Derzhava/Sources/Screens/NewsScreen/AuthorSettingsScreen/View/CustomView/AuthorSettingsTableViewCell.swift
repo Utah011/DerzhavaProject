@@ -7,9 +7,8 @@
 //
 
 import Foundation
-
 import UIKit
-//главный
+
 class AuthorSettingsTableViewCell: UITableViewCell {
     
     let numberOfPostsLabel:UILabel = {
@@ -48,7 +47,7 @@ class AuthorSettingsTableViewCell: UITableViewCell {
         let btn = UIButton()
         btn.translatesAutoresizingMaskIntoConstraints = false
         btn.clipsToBounds = true
-        btn.backgroundColor = #colorLiteral(red: 0.2509803922, green: 0.3294117647, blue: 0.6980392157, alpha: 1)
+        btn.backgroundColor = Colors.darkBlue
         btn.layer.cornerRadius = 8
         btn.titleLabel?.font = UIFont(name: "SFProDisplay-Semibold", size: 17)
         btn.setTitle("Выбрать способ оплаты", for: .normal)
@@ -62,9 +61,6 @@ class AuthorSettingsTableViewCell: UITableViewCell {
         lbl.font = UIFont(name: "SFProDisplay-SemiBold", size: 15)
         return lbl
     }()
-    
-    
-    
     
     let phoneButton:UIButton = {
         let btn = UIButton()
@@ -110,8 +106,7 @@ class AuthorSettingsTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        contentView.backgroundColor = #colorLiteral(red: 0.9529411765, green: 0.9568627451, blue: 0.9607843137, alpha: 1)
-//        contentView.backgroundColor = .systemRed
+        contentView.backgroundColor = Colors.background
         addSubViews()
         setConstrains()
         

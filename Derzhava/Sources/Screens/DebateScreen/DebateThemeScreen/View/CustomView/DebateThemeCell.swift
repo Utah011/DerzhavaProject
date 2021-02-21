@@ -8,7 +8,6 @@
 
 import Foundation
 import UIKit
-//import ExpandableLabel
 
 class DebateThemeCell: UITableViewCell {
     
@@ -29,9 +28,9 @@ class DebateThemeCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        contentView.backgroundColor = .white
+        contentView.backgroundColor = Colors.white
         contentView.layer.borderWidth = 0.5
-        contentView.layer.borderColor = UIColor.white.cgColor
+        contentView.layer.borderColor = Colors.white?.cgColor
         
         addSubviews()
         setConstraints()

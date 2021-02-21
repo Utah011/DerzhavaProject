@@ -17,7 +17,7 @@ class SearchScreenView: UIView {
     
     enum Constants {
         static let segmentedControlHeight: CGFloat = 40
-        static let underlineViewColor: UIColor = #colorLiteral(red: 0.2509803922, green: 0.3294117647, blue: 0.6980392157, alpha: 1)
+        static let underlineViewColor: UIColor = Colors.darkBlue ?? UIColor.red
         static let underlineViewHeight: CGFloat = 2
     }
 
@@ -45,7 +45,7 @@ class SearchScreenView: UIView {
 
         // Container view of the segmented control
 
-        segmentedControlContainerView.backgroundColor = #colorLiteral(red: 0.9529411765, green: 0.9568627451, blue: 0.9607843137, alpha: 1)
+        segmentedControlContainerView.backgroundColor = Colors.background
         segmentedControlContainerView.translatesAutoresizingMaskIntoConstraints = false
         addSubview(segmentedControlContainerView)
 

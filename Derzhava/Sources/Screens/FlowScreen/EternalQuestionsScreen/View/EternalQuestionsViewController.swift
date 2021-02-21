@@ -11,25 +11,12 @@ import UIKit
 class EternalQuestionsViewController: UIViewController {
         
     let contentView = EternalQuestionsScreenView()
-//    let collectionViewEternalQuestions:UICollectionView = {
-//        let layout = UICollectionViewFlowLayout()
-//        layout.minimumLineSpacing = 15
-//        layout.scrollDirection = .vertical
-//        let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
-//        cv.translatesAutoresizingMaskIntoConstraints = false
-//        cv.backgroundColor = #colorLiteral(red: 0.9568627451, green: 0.9568627451, blue: 0.9568627451, alpha: 1)
-//        cv.showsHorizontalScrollIndicator = false
-//        return cv
-//    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemTeal
         setNavigationController()
-//        addSubViews()
         setCollectionView()
-//        setConstrains()
-        
     }
     
     override func loadView() {
@@ -39,22 +26,12 @@ class EternalQuestionsViewController: UIViewController {
     func setNavigationController(){
         navigationController?.setNavigationBarHidden(false, animated: true)
         navigationItem.title = "Вечные вопрос"
-        navigationController?.navigationBar.backgroundColor = #colorLiteral(red: 0.9568627451, green: 0.9568627451, blue: 0.9568627451, alpha: 1)
+        navigationController?.navigationBar.backgroundColor = Colors.background
         navigationItem.largeTitleDisplayMode = .never
         let backItem = UIBarButtonItem()
         backItem.title = "Назад"
         navigationItem.backBarButtonItem = backItem
     }
-    
-//    func addSubViews(){
-//        [collectionViewEternalQuestions].forEach{self.view.addSubview($0)}
-//    }
-//
-//    func setConstrains(){
-//        collectionViewEternalQuestions.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
-//        collectionViewEternalQuestions.widthAnchor.constraint(equalTo: view.widthAnchor, constant: 0).isActive = true
-//        collectionViewEternalQuestions.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
-//    }
     
     func setCollectionView(){
         contentView.collectionViewEternalQuestions.delegate = self
@@ -99,8 +76,7 @@ extension EternalQuestionsViewController: UICollectionViewDelegateFlowLayout, UI
         
         let eternalQuestionsModel = eternalQuestionsArray[indexPath.row]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FlowCollectionViewCell", for: indexPath) as! FlowCollectionViewCell
-//        cell.titleLabel.text = eternalQuestionsArray[indexPath.row].title
-//        cell.mainTextLabel.text = eternalQuestionsArray[indexPath.row].maintext
+        
         cell.configure(with: EternalQuestionsViewModel(with: eternalQuestionsModel))
         return cell
     }

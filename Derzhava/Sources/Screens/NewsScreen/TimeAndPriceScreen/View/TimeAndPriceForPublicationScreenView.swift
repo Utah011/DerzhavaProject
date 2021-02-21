@@ -29,7 +29,7 @@ class TimeAndPriceForPublicationScreenView: UIView {
         addSubview(tableview)
         
         chooseADayView.translatesAutoresizingMaskIntoConstraints = false
-        chooseADayView.backgroundColor = #colorLiteral(red: 0.9568627451, green: 0.9568627451, blue: 0.9568627451, alpha: 1)
+        chooseADayView.backgroundColor = Colors.background
         addSubview(chooseADayView)
 
         titleForChooseView.translatesAutoresizingMaskIntoConstraints = false
@@ -40,25 +40,23 @@ class TimeAndPriceForPublicationScreenView: UIView {
 
         todayButtonForChooseView.translatesAutoresizingMaskIntoConstraints = false
         todayButtonForChooseView.setTitle("Сегодня", for: .normal)
-        todayButtonForChooseView.setTitleColor(.black, for: .normal)
+        todayButtonForChooseView.setTitleColor(Colors.black, for: .normal)
         todayButtonForChooseView.clipsToBounds = true
         todayButtonForChooseView.layer.cornerRadius = 15
-        todayButtonForChooseView.backgroundColor = #colorLiteral(red: 0.9568627451, green: 0.9568627451, blue: 0.9568627451, alpha: 1)
-//        todayButtonForChooseView.addTarget(self, action: #selector(todayButtonActions), for: .touchUpInside)
+        todayButtonForChooseView.backgroundColor = Colors.background
         chooseADayView.addSubview(todayButtonForChooseView)
 
         tomorrowButtonForChooseView.translatesAutoresizingMaskIntoConstraints = false
         tomorrowButtonForChooseView.setTitle("Завтра", for: .normal)
-        tomorrowButtonForChooseView.setTitleColor(.black, for: .normal)
+        tomorrowButtonForChooseView.setTitleColor(Colors.black, for: .normal)
         tomorrowButtonForChooseView.clipsToBounds = true
         tomorrowButtonForChooseView.layer.cornerRadius = 15
-        tomorrowButtonForChooseView.backgroundColor = #colorLiteral(red: 0.9568627451, green: 0.9568627451, blue: 0.9568627451, alpha: 1)
-//        tomorrowButtonForChooseView.addTarget(self, action: #selector(tomorrowButtonActions), for: .touchUpInside)
+        tomorrowButtonForChooseView.backgroundColor = Colors.background
         chooseADayView.addSubview(tomorrowButtonForChooseView)
 
 
         chooseTimeView.translatesAutoresizingMaskIntoConstraints = false
-        chooseTimeView.backgroundColor = #colorLiteral(red: 0.9568627451, green: 0.9568627451, blue: 0.9568627451, alpha: 1)
+        chooseTimeView.backgroundColor = Colors.background
         chooseTimeView.isHidden = true
         addSubview(chooseTimeView)
         

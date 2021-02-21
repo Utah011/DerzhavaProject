@@ -11,190 +11,17 @@ import UIKit
 class FullInformationAboutUserViewController: UIViewController {
 
     let contentView = FullInformationAboutUserScreenView()
-//    private enum Constants {
-//        static let segmentedControlHeight: CGFloat = 40
-//        static let underlineViewColor: UIColor = #colorLiteral(red: 0.2509803922, green: 0.3294117647, blue: 0.6980392157, alpha: 1)
-//        static let underlineViewHeight: CGFloat = 2
-//    }
-//
-//    // Container view of the segmented control
-//    private lazy var segmentedControlContainerView: UIView = {
-//        let containerView = UIView()
-//        containerView.backgroundColor = #colorLiteral(red: 0.9529411765, green: 0.9568627451, blue: 0.9607843137, alpha: 1)
-//        containerView.translatesAutoresizingMaskIntoConstraints = false
-//        return containerView
-//    }()
-//
-//    // Customised segmented control
-//    private lazy var segmentedControl: UISegmentedControl = {
-//        let segmentedControl = UISegmentedControl()
-//
-//        // Remove background and divider colors
-//        segmentedControl.backgroundColor = .clear
-//        segmentedControl.tintColor = .clear
-//
-//        // Append segments
-//
-////        if flag == 1 {
-////            segmentedControl.insertSegment(withTitle: "Новости", at: 0, animated: true)
-////            segmentedControl.insertSegment(withTitle: "Дебаты", at: 1, animated: true)
-////            segmentedControl.insertSegment(withTitle: "Позиция", at: 2, animated: true)
-////        } else {
-////            segmentedControl.insertSegment(withTitle: "Новости", at: 0, animated: true)
-////            segmentedControl.insertSegment(withTitle: "Позиция", at: 2, animated: true)
-////        }
-//
-//        segmentedControl.insertSegment(withTitle: "Новости", at: 0, animated: true)
-//        segmentedControl.insertSegment(withTitle: "Позиция", at: 1, animated: true)
-//        segmentedControl.insertSegment(withTitle: "Дебаты", at: 2, animated: true)
-//
-//        if flag != 1 {
-//            segmentedControl.removeSegment(at: 2, animated: true)
-//        }
-//
-//        // Select first segment by default
-//        segmentedControl.selectedSegmentIndex = 0
-//
-//        // Change text color and the font of the NOT selected (normal) segment
-//        segmentedControl.setTitleTextAttributes([
-//            NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.5411764706, green: 0.5411764706, blue: 0.5568627451, alpha: 1),
-//            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16, weight: .regular)], for: .normal)
-//
-//        // Change text color and the font of the selected segment
-//        segmentedControl.setTitleTextAttributes([
-//            NSAttributedString.Key.foregroundColor: Constants.underlineViewColor,
-//            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16, weight: .bold)], for: .selected)
-//
-//        // Set up event handler to get notified when the selected segment changes
-//        segmentedControl.addTarget(self, action: #selector(segmentedControlValueChanged), for: .valueChanged)
-//
-//        // Return false because we will set the constraints with Auto Layout
-//        segmentedControl.translatesAutoresizingMaskIntoConstraints = false
-//        return segmentedControl
-//    }()
-//
-//    // The underline view below the segmented control
-//    private lazy var bottomUnderlineView: UIView = {
-//        let underlineView = UIView()
-//        underlineView.backgroundColor = Constants.underlineViewColor
-//        underlineView.translatesAutoresizingMaskIntoConstraints = false
-//        return underlineView
-//    }()
-//
-//    private lazy var leadingDistanceConstraint: NSLayoutConstraint = {
-//        return bottomUnderlineView.leftAnchor.constraint(equalTo: segmentedControl.leftAnchor)
-//    }()
-//
-//    let justview: UIView = {
-//        let jv = UIView()
-//        jv.translatesAutoresizingMaskIntoConstraints = false
-//        jv.backgroundColor = .systemBlue
-//        return jv
-//    }()
-//
-//    let tableview:UITableView = {
-//        let table = UITableView()
-//        table.translatesAutoresizingMaskIntoConstraints = false
-//        table.separatorStyle = .none
-//        table.backgroundColor = #colorLiteral(red: 0.9529411765, green: 0.9568627451, blue: 0.9607843137, alpha: 1)
-//        return table
-//    }()
-//
-//    let topView:UIView = {
-//        let view = UIView()
-//        view.translatesAutoresizingMaskIntoConstraints = false
-//        view.backgroundColor = #colorLiteral(red: 0.9529411765, green: 0.9568627451, blue: 0.9607843137, alpha: 1)
-//        return view
-//    }()
-//
-//    let logoImageView:UIImageView = {
-//        let img = UIImageView()
-//        img.translatesAutoresizingMaskIntoConstraints = false
-//        img.layer.masksToBounds = true
-//        img.clipsToBounds = true
-//
-//        if flag == 1 {
-//            img.image = UIImage(named: "polit")
-//        } else {
-//            img.image = UIImage(named: "riabiglogo")
-//        }
-//
-//        img.layer.cornerRadius = 50
-//        img.contentMode = .scaleAspectFill
-//        return img
-//    }()
-//
-//    let veryficationButton:UIButton = {
-//        let btn = UIButton()
-//        btn.translatesAutoresizingMaskIntoConstraints = false
-//        btn.layer.masksToBounds = true
-//        //img.image = UIImage(named: "followlogo")
-//        btn.setImage(UIImage(named: "addfollowlogo"), for: .normal)
-////        btn.addTarget(self, action: #selector(verificationButtonTap(_:)), for: .allTouchEvents)
-//        return btn
-//    }()
-    
     var statement = false
     var checkMarkSelected = 0
-
-//
-//    let nameLabel:UILabel = {
-//        let lbl = UILabel()
-//        lbl.numberOfLines = 1
-//        if flag == 1 {
-//            lbl.text = "Денис Мантуров"
-//        } else {
-//            lbl.text = "РИА"
-//        }
-//        lbl.translatesAutoresizingMaskIntoConstraints = false
-//        lbl.font = UIFont(name: "SFProDisplay-SemiBold", size: 20)
-//        lbl.textColor = .black
-//        lbl.lineBreakMode = .byTruncatingTail
-//        return lbl
-//    }()
-//
-//    let positionLabel:UILabel = {
-//        let lbl = UILabel()
-//        lbl.numberOfLines = 2
-//        lbl.textAlignment = .center
-//
-//
-//        if flag == 1 {
-//            lbl.text = "Министр промышленности и торговли Российской Федерации"
-//        } else {
-//            lbl.text = "Русскоязычное интернет-издание"
-//        }
-//
-////        lbl.text = "Министр промышленности и торговли Российской Федерации"
-//        lbl.translatesAutoresizingMaskIntoConstraints = false
-//        lbl.font = UIFont(name: "SFProText-Regular", size: 13)
-//        lbl.textColor = #colorLiteral(red: 0.5411764706, green: 0.5411764706, blue: 0.5568627451, alpha: 1)
-//        lbl.lineBreakMode = .byWordWrapping
-//        return lbl
-//    }()
-//
-//    let myViewHeader:UIView = {
-//        let view = UIView()
-//        //view.translatesAutoresizingMaskIntoConstraints = false
-//        view.backgroundColor = #colorLiteral(red: 0.9529411765, green: 0.9568627451, blue: 0.9607843137, alpha: 1)
-//        view.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 273)
-//        //view.layer.borderColor = #colorLiteral(red: 0.9098039216, green: 0.9098039216, blue: 0.9098039216, alpha: 1)
-//        //view.layer.borderWidth = 0.5
-//        return view
-//    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //view.backgroundColor = #colorLiteral(red: 0.9764705882, green: 0.9764705882, blue: 0.9764705882, alpha: 1)
-        view.backgroundColor = #colorLiteral(red: 0.9529411765, green: 0.9568627451, blue: 0.9607843137, alpha: 1)
+        view.backgroundColor = Colors.background
         exampleAnswers()
         setNavigationController()
         tableViewSettings()
         setContentView()
-//        addSubviews()
-//        setSegmentedControll()
-//        setConstrains()
     }
     
     override func loadView() {
@@ -207,17 +34,6 @@ class FullInformationAboutUserViewController: UIViewController {
         contentView.veryficationButton.addTarget(self, action: #selector(verificationButtonTap(_:)), for: .allTouchEvents)
     }
     
-//    func addSubviews(){
-//        view.addSubview(tableview)
-//        myViewHeader.addSubview(logoImageView)
-//        myViewHeader.addSubview(veryficationButton)
-//        myViewHeader.addSubview(nameLabel)
-//        myViewHeader.addSubview(positionLabel)
-//        myViewHeader.addSubview(segmentedControlContainerView)
-//        segmentedControlContainerView.addSubview(segmentedControl)
-//        segmentedControlContainerView.addSubview(bottomUnderlineView)
-//    }
-    
     func tableViewSettings(){
         contentView.tableview.delegate = self
         contentView.tableview.dataSource = self
@@ -226,65 +42,18 @@ class FullInformationAboutUserViewController: UIViewController {
         contentView.tableview.tableHeaderView = contentView.myViewHeader
     }
     
-//    func setConstrains(){
-//
-//        logoImageView.topAnchor.constraint(equalTo: myViewHeader.topAnchor, constant: 30).isActive = true
-//        logoImageView.centerXAnchor.constraint(equalTo: myViewHeader.centerXAnchor).isActive = true
-//        logoImageView.widthAnchor.constraint(equalToConstant: 100).isActive = true
-//        logoImageView.heightAnchor.constraint(equalToConstant: 100).isActive = true
-//
-//        veryficationButton.topAnchor.constraint(equalTo: logoImageView.topAnchor, constant: 70).isActive = true
-//        veryficationButton.leftAnchor.constraint(equalTo: logoImageView.leftAnchor, constant: 70).isActive = true
-//        veryficationButton.widthAnchor.constraint(equalToConstant: 30).isActive = true
-//        veryficationButton.heightAnchor.constraint(equalToConstant: 30).isActive = true
-//
-//        nameLabel.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 10).isActive = true
-//        nameLabel.centerXAnchor.constraint(equalTo: myViewHeader.centerXAnchor).isActive = true
-//
-//        positionLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 5).isActive = true
-//        positionLabel.centerXAnchor.constraint(equalTo: myViewHeader.centerXAnchor).isActive = true
-//        positionLabel.widthAnchor.constraint(equalTo: myViewHeader.widthAnchor).isActive = true
-//
-//        segmentedControlContainerView.topAnchor.constraint(equalTo: positionLabel.bottomAnchor, constant: 18).isActive = true
-//        segmentedControlContainerView.widthAnchor.constraint(equalTo: myViewHeader.widthAnchor).isActive = true
-//        segmentedControlContainerView.heightAnchor.constraint(equalToConstant: Constants.segmentedControlHeight).isActive = true
-//
-//        tableview.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
-//        tableview.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-//        tableview.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
-//        tableview.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
-//    }
-//
-//    func setSegmentedControll(){
-//        // Constrain the segmented control to the container view
-//        NSLayoutConstraint.activate([
-//            segmentedControl.topAnchor.constraint(equalTo: segmentedControlContainerView.topAnchor),
-//            segmentedControl.leadingAnchor.constraint(equalTo: segmentedControlContainerView.leadingAnchor),
-//            segmentedControl.centerXAnchor.constraint(equalTo: segmentedControlContainerView.centerXAnchor),
-//            segmentedControl.centerYAnchor.constraint(equalTo: segmentedControlContainerView.centerYAnchor)
-//            ])
-//
-//        // Constrain the underline view relative to the segmented control
-//        NSLayoutConstraint.activate([
-//            bottomUnderlineView.bottomAnchor.constraint(equalTo: segmentedControl.bottomAnchor),
-//            bottomUnderlineView.heightAnchor.constraint(equalToConstant: Constants.underlineViewHeight),
-//            leadingDistanceConstraint,
-//            bottomUnderlineView.widthAnchor.constraint(equalTo: segmentedControl.widthAnchor, multiplier: 1 / CGFloat(segmentedControl.numberOfSegments))
-//            ])
-//    }
-    
     func setNavigationController(){
         navigationController?.setNavigationBarHidden(false, animated: true)
         navigationItem.title = "Профиль"
         //navigationController?.navigationBar.shadowImage = UIImage(named: "sepatarenLineForNavCtrl")
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "infoIcon"), style: .plain, target: self, action: #selector(goToFullInfoAboutAuthor))
-        navigationItem.rightBarButtonItem?.tintColor = .black
+        navigationItem.rightBarButtonItem?.tintColor = Colors.black
         
-        navigationController?.navigationBar.backgroundColor = #colorLiteral(red: 0.9529411765, green: 0.9568627451, blue: 0.9607843137, alpha: 1)
+        navigationController?.navigationBar.backgroundColor = Colors.background
         let backItem = UIBarButtonItem()
         backItem.title = "Назад"
         navigationItem.backBarButtonItem = backItem
-        navigationItem.backBarButtonItem?.tintColor = #colorLiteral(red: 0.2509803922, green: 0.3294117647, blue: 0.6980392157, alpha: 1)
+        navigationItem.backBarButtonItem?.tintColor = Colors.darkBlue
     }
     
     @objc
@@ -421,13 +190,6 @@ extension FullInformationAboutUserViewController:UITableViewDelegate, UITableVie
             numberOfRows = newsArray.count
             print("First array - \(newsArray.count)")
         case 1:
-//            if section == 0 {
-//                numberOfRows = 1
-//            } else {
-//                numberOfRows = 3
-//            }
-//            print("Second array - \(answersArray.count)")
-        
             numberOfRows = 2
             print("Third array - \(answersArray.count)")
         default:
@@ -472,6 +234,8 @@ extension FullInformationAboutUserViewController:UITableViewDelegate, UITableVie
         let newsModel = newsArray[indexPath.row]
         let secondAnswerModel = secondAnswersArray[indexPath.row]
         let twitModel = twitArray[indexPath.row]
+        let debateModel = mainDebateArray[indexPath.row]
+        
         switch changeSegmentedControlLinePosition() {
         case 0:
             
@@ -481,10 +245,6 @@ extension FullInformationAboutUserViewController:UITableViewDelegate, UITableVie
             }
                     cell.selectionStyle = .none
             
-//            cell.photoImageView.image = newsArray[indexPath.row].photo
-//            cell.nameLabel.text = newsArray[indexPath.row].newstitle
-//            cell.adressLabel.text = newsArray[indexPath.row].newstext
-//            cell.numverOfViews.text = newsArray[indexPath.row].numberofallviews
             cell.configure(with: NewsViewModel(with: newsModel))
             
             if flag == 1 {
@@ -492,9 +252,6 @@ extension FullInformationAboutUserViewController:UITableViewDelegate, UITableVie
             } else {
                 cell.writerLogoImageView.image = UIImage(named: "riabiglogo")
             }
-            
-//            cell.writerLogoImageView.image = newsArray[indexPath.row].logoofwriter
-//            cell.bottomOfTheCellLabel.text = newsArray[indexPath.row].signatureofwriter
             
             cell.bottomOfTheCellLabel.isHidden = false
             cell.askToAnswerButtom.isHidden = true
@@ -516,19 +273,6 @@ extension FullInformationAboutUserViewController:UITableViewDelegate, UITableVie
                 cell.secondPhotoImageView.image = answersArray[indexPath.row].photo
                 cell.secondNameLabel.text = answersArray[indexPath.row].namesurname
                 
-                
-//                if flag == 1 {
-//                    cell.secondPhotoImageView.image = UIImage(named: "polit")
-//                } else {
-//                    cell.secondPhotoImageView.image = UIImage(named: "riabiglogo")
-//                }
-//
-//                if flag == 1 {
-//                    cell.secondNameLabel.text = "Денис Мантуров"
-//                } else {
-//                    cell.secondNameLabel.text = "РИА"
-//                }
-                
                 return cell
             } else {
                 tableView.register(TwitsCell.self, forCellReuseIdentifier: "TwitsCell")
@@ -537,24 +281,7 @@ extension FullInformationAboutUserViewController:UITableViewDelegate, UITableVie
                     return UITableViewCell()
                 }
                 cell.selectionStyle = .none
-                
-                
-//                if flag == 1 {
-//                    cell.photoImageView.image = UIImage(named: "polit")
-//                } else {
-//                    cell.photoImageView.image = UIImage(named: "riabiglogo")
-//                }
-////                cell.photoImageView.image = answersArray[indexPath.row].photo
-//
-//                if flag == 1 {
-//                    cell.nameLabel.text = "Денис Мантуров"
-//                } else {
-//                    cell.nameLabel.text = "РИА"
-//                }
-
-//                cell.newsImageView.image = newsArray[indexPath.row].photo
                 cell.configure(with: TwitViewModel(view: twitModel))
-                
                 
                 return cell
             }
@@ -564,7 +291,7 @@ extension FullInformationAboutUserViewController:UITableViewDelegate, UITableVie
                 assertionFailure("DebateTableViewCell is not available")
                 return UITableViewCell()
             }
-
+            cell.configure(with: MainDebateViewModel(with: debateModel))
             return cell
         }
     
@@ -596,14 +323,13 @@ class MyCustomHeader: UITableViewHeaderFooterView {
 
         //contentView.addSubview(image)
         contentView.addSubview(title)
-        contentView.backgroundColor = #colorLiteral(red: 0.9568627451, green: 0.9568627451, blue: 0.9568627451, alpha: 1)
+        contentView.backgroundColor = Colors.background
 
         // Center the image vertically and place it near the leading
         // edge of the view. Constrain its width and height to 50 points.
         NSLayoutConstraint.activate([
             title.leadingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.leadingAnchor),
             title.widthAnchor.constraint(equalTo: contentView.widthAnchor),
-            //title.heightAnchor.constraint(equalToConstant: 60),
             title.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 30)
         ])
     }

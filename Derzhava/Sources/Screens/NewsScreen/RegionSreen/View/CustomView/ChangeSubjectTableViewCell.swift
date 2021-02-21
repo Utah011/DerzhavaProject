@@ -14,11 +14,8 @@ class ChangeSubjectTableViewCell: UITableViewCell {
     let photoImageView:UIImageView = {
         let img = UIImageView()
         img.clipsToBounds = true
-        //img.image = UIImage(named: "gerb")
         img.translatesAutoresizingMaskIntoConstraints = false
-//        img.layer.cornerRadius = 37.5
         img.contentMode = .scaleAspectFit
-        //img.layer.cornerRadius = 16
         return img
     }()
         
@@ -28,7 +25,7 @@ class ChangeSubjectTableViewCell: UITableViewCell {
         lbl.textAlignment = .left
         lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.font = UIFont(name: "SFProDisplay-Regular", size: 20)
-        lbl.textColor = .black
+        lbl.textColor = Colors.black
         lbl.lineBreakMode = .byWordWrapping
         return lbl
     }()
@@ -44,9 +41,8 @@ class ChangeSubjectTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        contentView.backgroundColor = #colorLiteral(red: 0.9529411765, green: 0.9568627451, blue: 0.9607843137, alpha: 1)
-
-        
+        contentView.backgroundColor = Colors.background
+                
         [photoImageView,subjectLabel,checkMark].forEach{self.contentView.addSubview($0)}
         setConstraints()
         

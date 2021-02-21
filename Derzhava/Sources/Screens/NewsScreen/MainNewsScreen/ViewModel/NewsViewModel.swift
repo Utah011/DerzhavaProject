@@ -17,15 +17,6 @@ class NewsViewModel {
     let numberofallviews:String
     let signatureofwriter:String
     
-//    init(newstitle:String, newstext:String, id:Int, photo:UIImage, logoofwriter:UIImage, numberofallviews:String, signatureofwriter:String) {
-//        self.newstitle = newstitle
-//        self.newstext = newstext
-//        self.photo = photo
-//        self.numberofallviews = numberofallviews
-//        self.logoofwriter = logoofwriter
-//        self.signatureofwriter = signatureofwriter
-//    }
-    
     init(with model: News) {
         photo = model.photo
         logoofwriter = model.logoofwriter

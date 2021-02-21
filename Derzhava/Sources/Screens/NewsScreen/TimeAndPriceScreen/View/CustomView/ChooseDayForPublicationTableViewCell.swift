@@ -23,10 +23,10 @@ class ChooseDayForPublicationTableViewCell: UITableViewCell {
         let btn = UIButton()
         btn.translatesAutoresizingMaskIntoConstraints = false
         btn.setTitle("Сегодня", for: .normal)
-        btn.setTitleColor(.black, for: .normal)
+        btn.setTitleColor(Colors.black, for: .normal)
         btn.clipsToBounds = true
         btn.layer.cornerRadius = 15
-        btn.backgroundColor = #colorLiteral(red: 0.9568627451, green: 0.9568627451, blue: 0.9568627451, alpha: 1)
+        btn.backgroundColor = Colors.background
         btn.addTarget(self, action: #selector(todayButtonActions), for: .touchUpInside)
         return btn
     }()
@@ -37,13 +37,13 @@ class ChooseDayForPublicationTableViewCell: UITableViewCell {
         btn.setTitle("Завтра", for: .normal)
         btn.clipsToBounds = true
         btn.layer.cornerRadius = 15
-        btn.backgroundColor = #colorLiteral(red: 0.2509803922, green: 0.3294117647, blue: 0.6980392157, alpha: 1)
+        btn.backgroundColor = Colors.darkBlue
         return btn
     }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        contentView.backgroundColor = #colorLiteral(red: 0.9568627451, green: 0.9568627451, blue: 0.9568627451, alpha: 1)
+        contentView.backgroundColor = Colors.background
         
         addSubviews()
         setConstraints()
@@ -71,8 +71,6 @@ class ChooseDayForPublicationTableViewCell: UITableViewCell {
     
     @objc
     func todayButtonActions(){
-//        todayButton.backgroundColor = #colorLiteral(red: 0.2509803922, green: 0.3294117647, blue: 0.6980392157, alpha: 1)
-//        todayButton.setTitleColor(.white, for: .normal)
         delegate?.didTapDay(index: index?.row ?? 0)
         print("hey man wassap")
     }

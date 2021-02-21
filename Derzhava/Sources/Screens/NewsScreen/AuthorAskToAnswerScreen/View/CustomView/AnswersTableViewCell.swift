@@ -7,9 +7,7 @@
 //
 
 import Foundation
-
 import UIKit
-//import ExpandableLabel
 
 class ThisIsIt: UITableViewCell {
     
@@ -22,10 +20,9 @@ class ThisIsIt: UITableViewCell {
         return img
     }()
     
-    
     let bottomView:UIView = {
         let view = UIView()
-        view.backgroundColor = .white
+        view.backgroundColor = Colors.white
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -36,7 +33,7 @@ class ThisIsIt: UITableViewCell {
         lbl.textAlignment = .left
         lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.font = UIFont(name: "SFProDisplay-Semibold", size: 20)
-        lbl.textColor = .black
+        lbl.textColor = Colors.black
         lbl.lineBreakMode = .byTruncatingTail
         return lbl
     }()
@@ -47,7 +44,7 @@ class ThisIsIt: UITableViewCell {
         lbl.textAlignment = .left
         lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.font = UIFont(name: "SFProText-Regular", size: 17)
-        lbl.textColor = .black
+        lbl.textColor = Colors.black
         lbl.lineBreakMode = .byTruncatingTail
         return lbl
     }()
@@ -56,7 +53,7 @@ class ThisIsIt: UITableViewCell {
         let btn = UIButton()
         btn.backgroundColor = .blue
         btn.setTitleColor(UIColor(red: 0.176, green: 0.322, blue: 0.486, alpha: 1), for: .normal)
-        btn.setTitleColor(UIColor.white, for: .normal)
+        btn.setTitleColor(Colors.white, for: .normal)
 
         btn.setTitle("Далее", for: .normal)
         btn.titleLabel?.font = UIFont(name: "OpenSans-SemiBold", size: 20)
@@ -92,8 +89,7 @@ class ThisIsIt: UITableViewCell {
        let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.clipsToBounds = true
-//        v.backgroundColor = .systemPink
-        view.backgroundColor = #colorLiteral(red: 0.9568627451, green: 0.9568627451, blue: 0.9568627451, alpha: 1)
+        view.backgroundColor = Colors.background
         view.layer.cornerRadius = 0
         return view
     }()
@@ -110,15 +106,15 @@ class ThisIsIt: UITableViewCell {
     let readView: UILabel = {
         let lbl = UILabel()
         lbl.translatesAutoresizingMaskIntoConstraints = false
-        lbl.backgroundColor = #colorLiteral(red: 0.9568627451, green: 0.9568627451, blue: 0.9568627451, alpha: 1)
+        lbl.backgroundColor = Colors.background
         lbl.text = "Читать далее..."
-        lbl.textColor = #colorLiteral(red: 0.2509803922, green: 0.3294117647, blue: 0.6980392157, alpha: 1)
+        lbl.textColor = Colors.darkBlue
         return lbl
     }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        contentView.backgroundColor = #colorLiteral(red: 0.9568627451, green: 0.9568627451, blue: 0.9568627451, alpha: 1)
+        contentView.backgroundColor = Colors.background
 
         contentView.addSubview(container)
         container.addSubview(nameLabel)
@@ -128,7 +124,6 @@ class ThisIsIt: UITableViewCell {
         container.addSubview(timeLabel)
         
         contentView.addSubview(readView)
-        //container.addSubview(lineView)
         setConstraints()
         
     }
@@ -161,14 +156,8 @@ class ThisIsIt: UITableViewCell {
         photoImageView.heightAnchor.constraint(equalToConstant: 50).isActive = true
         photoImageView.widthAnchor.constraint(equalToConstant: 50).isActive = true
         
-//        lineView.topAnchor.constraint(equalTo: positionLabel.bottomAnchor,constant: 11).isActive = true
-//        lineView.leftAnchor.constraint(equalTo: container.leftAnchor,constant: 15).isActive = true
-//        lineView.heightAnchor.constraint(equalToConstant: 157).isActive = true
-//        lineView.widthAnchor.constraint(equalToConstant: 25).isActive = true
-
         nameLabel.topAnchor.constraint(equalTo: container.topAnchor,constant: 10).isActive = true
         nameLabel.leftAnchor.constraint(equalTo: photoImageView.rightAnchor, constant: 10).isActive = true
-        //nameLabel.heightAnchor.constraint(equalToConstant: 22).isActive = true
         nameLabel.widthAnchor.constraint(equalToConstant: 260).isActive = true
         
         timeLabel.topAnchor.constraint(equalTo: container.topAnchor,constant: 15).isActive = true
@@ -179,16 +168,13 @@ class ThisIsIt: UITableViewCell {
         positionLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor,constant: 0).isActive = true
         positionLabel.leftAnchor.constraint(equalTo: photoImageView.rightAnchor, constant: 10).isActive = true
         positionLabel.widthAnchor.constraint(equalToConstant: 276).isActive = true
-        //positionLabel.heightAnchor.constraint(equalToConstant: 27).isActive = true
         
         adressLabel.topAnchor.constraint(equalTo: positionLabel.bottomAnchor,constant: 11).isActive = true
         adressLabel.leftAnchor.constraint(equalTo: container.leftAnchor, constant: 75).isActive = true
         adressLabel.rightAnchor.constraint(equalTo: container.rightAnchor, constant: -8).isActive = true
-        //adressLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20).isActive = true
         
         readView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10).isActive = true
         readView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 75).isActive = true
-//        readView.widthAnchor.constraint(equalToConstant: 150).isActive = true
         readView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: 0).isActive = true
         readView.heightAnchor.constraint(equalToConstant: 19.5).isActive = true
     }

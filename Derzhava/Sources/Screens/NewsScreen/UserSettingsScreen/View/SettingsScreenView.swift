@@ -66,8 +66,7 @@ class SettingsScreenView: UIView {
         
         buttonRegistration.translatesAutoresizingMaskIntoConstraints = false
         buttonRegistration.setTitle("Перейти на аккаунт автора", for: .normal)
-        buttonRegistration.setTitleColor(#colorLiteral(red: 0.2509803922, green: 0.3294117647, blue: 0.6980392157, alpha: 1), for: .normal)
-//        buttonRegistration.addTarget(self, action: #selector(goToRegistration), for: .touchUpInside)
+        buttonRegistration.setTitleColor(Colors.darkBlue, for: .normal)
         addSubview(buttonRegistration)
     }
     

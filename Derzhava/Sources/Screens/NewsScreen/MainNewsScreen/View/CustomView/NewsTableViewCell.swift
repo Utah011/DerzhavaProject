@@ -25,16 +25,14 @@ class NewsTableViewCell: UITableViewCell {
         img.layer.cornerRadius = 20
         img.contentMode = .scaleAspectFill
         img.layer.borderWidth = 1
-        img.layer.borderColor = UIColor.white.cgColor
+        img.layer.borderColor = Colors.white?.cgColor
         return img
     }()
     
     let bottomView:UIView = {
         let view = UIView()
-        view.backgroundColor = .white
+        view.backgroundColor = Colors.white
         view.translatesAutoresizingMaskIntoConstraints = false
-        //view.layer.cornerRadius = 16
-        //view.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
         return view
     }()
 
@@ -44,21 +42,19 @@ class NewsTableViewCell: UITableViewCell {
         lbl.textAlignment = .left
         lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.font = UIFont(name: "SFProDisplay-Semibold", size: 20)
-        //lbl.font = lbl.font.withSize(20)
-        lbl.textColor = .black
+        lbl.textColor = Colors.black
         lbl.lineBreakMode = .byWordWrapping
         return lbl
     }()
-    //ГЛАВНЫЙ
+    
     let adressLabel:UILabel = {
         let lbl = UILabel()
         lbl.numberOfLines = 0
         lbl.textAlignment = .left
         lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.font = UIFont(name: "SFProText-Regular", size: 17)
-        lbl.textColor = .black
+        lbl.textColor = Colors.black
         lbl.numberOfLines = 0
-        //lbl.frame = CGRect(x:0,y:0,width:lbl.intrinsicContentSize.width,height:lbl.intrinsicContentSize.height)
         return lbl
     }()
     
@@ -84,7 +80,7 @@ class NewsTableViewCell: UITableViewCell {
         img.clipsToBounds = false
         img.layer.masksToBounds = true
         img.layer.borderWidth = 2
-        img.layer.borderColor = UIColor.white.cgColor
+        img.layer.borderColor = Colors.white?.cgColor
         img.image = UIImage(named: "polit")
         img.contentMode = .scaleAspectFit
         img.layer.cornerRadius = 15
@@ -97,7 +93,7 @@ class NewsTableViewCell: UITableViewCell {
         img.clipsToBounds = false
         img.layer.masksToBounds = true
         img.layer.borderWidth = 2
-        img.layer.borderColor = UIColor.white.cgColor
+        img.layer.borderColor = Colors.white?.cgColor
         img.contentMode = .scaleAspectFit
         img.image = UIImage(named: "sob")
         img.layer.cornerRadius = 15
@@ -110,7 +106,7 @@ class NewsTableViewCell: UITableViewCell {
         img.clipsToBounds = false
         img.layer.masksToBounds = true
         img.layer.borderWidth = 2
-        img.layer.borderColor = UIColor.white.cgColor
+        img.layer.borderColor = Colors.white?.cgColor
         img.contentMode = .scaleAspectFill
         img.image = UIImage(named: "sil")
         img.layer.cornerRadius = 15
@@ -123,10 +119,9 @@ class NewsTableViewCell: UITableViewCell {
         img.clipsToBounds = false
         img.layer.masksToBounds = true
         img.layer.borderWidth = 2
-        img.layer.borderColor = UIColor.white.cgColor
+        img.layer.borderColor = Colors.white?.cgColor
         img.image = UIImage(named: "milonov")
         img.contentMode = .scaleAspectFill
-        //img.contentMode = .right
         img.layer.cornerRadius = 15
         return img
     }()
@@ -137,7 +132,7 @@ class NewsTableViewCell: UITableViewCell {
         img.clipsToBounds = false
         img.layer.masksToBounds = true
         img.layer.borderWidth = 2
-        img.layer.borderColor = UIColor.white.cgColor
+        img.layer.borderColor = Colors.white?.cgColor
         img.contentMode = .scaleAspectFill
         img.image = UIImage(named: "zhirinovskiy")
         img.layer.cornerRadius = 15
@@ -147,7 +142,7 @@ class NewsTableViewCell: UITableViewCell {
     let writerSignature: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = #colorLiteral(red: 0.9529411765, green: 0.9568627451, blue: 0.9607843137, alpha: 1)
+        view.backgroundColor = Colors.background
         return view
     }()
     
@@ -166,7 +161,6 @@ class NewsTableViewCell: UITableViewCell {
         let lbl = UILabel()
         lbl.numberOfLines = 0
         lbl.textAlignment = .left
-        //lbl.text = "РБК • 12:00"
         lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.font = UIFont(name: "SFProText-Regular", size: 13)
         lbl.textColor = #colorLiteral(red: 0.5725490196, green: 0.5725490196, blue: 0.5725490196, alpha: 1)
@@ -180,7 +174,7 @@ class NewsTableViewCell: UITableViewCell {
         img.clipsToBounds = false
         img.layer.masksToBounds = true
         img.layer.borderWidth = 2
-        img.layer.borderColor = UIColor.white.cgColor
+        img.layer.borderColor = Colors.white?.cgColor
         img.image = UIImage(named: "polit")
         img.contentMode = .scaleAspectFill
         img.layer.cornerRadius = 15
@@ -193,7 +187,7 @@ class NewsTableViewCell: UITableViewCell {
         img.clipsToBounds = false
         img.layer.masksToBounds = true
         img.layer.borderWidth = 2
-        img.layer.borderColor = UIColor.white.cgColor
+        img.layer.borderColor = Colors.white?.cgColor
         img.image = UIImage(named: "sob")
         img.layer.cornerRadius = 15
         return img
@@ -205,7 +199,7 @@ class NewsTableViewCell: UITableViewCell {
         img.clipsToBounds = false
         img.layer.masksToBounds = true
         img.layer.borderWidth = 2
-        img.layer.borderColor = UIColor.white.cgColor
+        img.layer.borderColor = Colors.white?.cgColor
         img.image = UIImage(named: "milonov")
         img.layer.cornerRadius = 15
         return img
@@ -217,7 +211,7 @@ class NewsTableViewCell: UITableViewCell {
         img.clipsToBounds = false
         img.layer.masksToBounds = true
         img.layer.borderWidth = 2
-        img.layer.borderColor = UIColor.white.cgColor
+        img.layer.borderColor = Colors.white?.cgColor
         img.image = UIImage(named: "sil")
         img.contentMode = .scaleAspectFill
         
@@ -231,8 +225,7 @@ class NewsTableViewCell: UITableViewCell {
         img.clipsToBounds = false
         img.layer.masksToBounds = true
         img.layer.borderWidth = 2
-        img.layer.borderColor = UIColor.white.cgColor
-//        img.backgroundColor = #colorLiteral(red: 0.3515200019, green: 0.7256308198, blue: 1, alpha: 1)
+        img.layer.borderColor = Colors.white?.cgColor
         img.image = UIImage(named: "+2")
         img.contentMode = .center
         img.layer.cornerRadius = 15
@@ -243,7 +236,7 @@ class NewsTableViewCell: UITableViewCell {
         let btn = UIButton()
         btn.translatesAutoresizingMaskIntoConstraints = false
         btn.setTitle("Просят ответить", for: .normal)
-        btn.setTitleColor(#colorLiteral(red: 0.2509803922, green: 0.3294117647, blue: 0.6980392157, alpha: 1), for: .normal)
+        btn.setTitleColor(Colors.darkBlue, for: .normal)
         btn.titleLabel?.font = UIFont(name: "SFProDisplay-Semibold", size: 13)
         return btn
     }()
@@ -270,12 +263,9 @@ class NewsTableViewCell: UITableViewCell {
         bottomOfTheCellLabel.text = viewModel.signatureofwriter
     }
     
-    
-    
     func setConstraints(){
         
         photoImageView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
-//        photoImageView.bottomAnchor.constraint(equalTo: bottomView.topAnchor).isActive = true
         photoImageView.leftAnchor.constraint(equalTo: contentView.leftAnchor).isActive = true
         photoImageView.rightAnchor.constraint(equalTo: contentView.rightAnchor).isActive = true
         photoImageView.heightAnchor.constraint(equalToConstant: 194).isActive = true
@@ -287,15 +277,12 @@ class NewsTableViewCell: UITableViewCell {
         
         bottomView.bottomAnchor.constraint(equalTo: writerSignature.topAnchor, constant: 0).isActive = true
         bottomView.topAnchor.constraint(equalTo: photoImageView.bottomAnchor, constant: 0).isActive = true
-//        bottomView.heightAnchor.constraint(equalToConstant: 256).isActive = true
         bottomView.leftAnchor.constraint(equalTo: photoImageView.leftAnchor).isActive = true
         bottomView.rightAnchor.constraint(equalTo: photoImageView.rightAnchor).isActive = true
         
         nameLabel.topAnchor.constraint(equalTo: bottomView.topAnchor, constant: 10).isActive = true
-//        nameLabel.heightAnchor.constraint(equalToConstant: 48).isActive = true
         nameLabel.leftAnchor.constraint(equalTo: bottomView.leftAnchor, constant: 16).isActive = true
         nameLabel.rightAnchor.constraint(equalTo: bottomView.rightAnchor, constant: -15).isActive = true
-//        nameLabel.widthAnchor.constraint(equalToConstant: 323).isActive = true
         
         adressLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 10).isActive = true
         adressLabel.leftAnchor.constraint(equalTo: nameLabel.leftAnchor).isActive = true

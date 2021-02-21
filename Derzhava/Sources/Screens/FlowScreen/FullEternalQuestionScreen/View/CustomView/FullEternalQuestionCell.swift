@@ -7,9 +7,7 @@
 //
 
 import Foundation
-
 import UIKit
-//тут
 
 class FullEternalQuestionCell: UITableViewCell {
     
@@ -17,7 +15,6 @@ class FullEternalQuestionCell: UITableViewCell {
         let lbl = UILabel()
         lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.numberOfLines = 0
-//        lbl.text = "Почему ВВП не растет с 2008 года?"
         lbl.font = UIFont(name: "SFProDisplay-Bold", size: 22)
         lbl.lineBreakMode = .byWordWrapping
         return lbl
@@ -27,14 +24,13 @@ class FullEternalQuestionCell: UITableViewCell {
         let lbl = UILabel()
         lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.numberOfLines = 0
-//        lbl.text = "Несмотря на внешнее сходство с кризисами 1998 и 2008 гг., последний спад оказался куда глубже и сложнее. Его можно сравнить лишь трансформационным периодом 1990-х гг."
         lbl.font = UIFont(name: "SFProText-Regular", size: 17)
         return lbl
     }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        contentView.backgroundColor = #colorLiteral(red: 0.9568627451, green: 0.9568627451, blue: 0.9568627451, alpha: 1)
+        contentView.backgroundColor = Colors.background
         addSubviews()
         setConstrains()
 

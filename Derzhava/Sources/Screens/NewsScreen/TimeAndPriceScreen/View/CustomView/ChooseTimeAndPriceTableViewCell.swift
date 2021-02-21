@@ -15,7 +15,6 @@ class ChooseTimeAndPriceTableViewCell: UITableViewCell {
     let timeLabel:UILabel = {
         let lbl = UILabel()
         lbl.translatesAutoresizingMaskIntoConstraints = false
-//        lbl.text = "19:00"
         lbl.font = UIFont(name: "SFProDisplay-Semibold", size: 17)
         return lbl
     }()
@@ -31,16 +30,15 @@ class ChooseTimeAndPriceTableViewCell: UITableViewCell {
     let notAvailabelLabel:UILabel = {
         let lbl = UILabel()
         lbl.translatesAutoresizingMaskIntoConstraints = false
-//        lbl.text = "2000 Р"
         lbl.font = UIFont(name: "SFProText-Regular", size: 17)
         return lbl
     }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        contentView.backgroundColor = .white
+        contentView.backgroundColor = Colors.white
         contentView.layer.borderWidth = 0.5
-        contentView.layer.borderColor = UIColor.white.cgColor
+        contentView.layer.borderColor = Colors.white?.cgColor
         
         addSubviews()
         setConstraints()

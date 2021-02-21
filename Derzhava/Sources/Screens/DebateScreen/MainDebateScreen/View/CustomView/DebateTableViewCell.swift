@@ -22,7 +22,7 @@ class DebateTableViewCell: UITableViewCell {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         //view.backgroundColor = #colorLiteral(red: 0.9764705882, green: 0.9764705882, blue: 0.9764705882, alpha: 0.94)
-        view.backgroundColor = #colorLiteral(red: 0.9568627451, green: 0.9568627451, blue: 0.9568627451, alpha: 1)
+        view.backgroundColor = Colors.background
         return view
     }()
     
@@ -53,7 +53,7 @@ class DebateTableViewCell: UITableViewCell {
 //        lbl.text = "Денис Мантуров"
         lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.font = UIFont(name: "SFProDisplay-SemiBold", size: 17)
-        lbl.textColor = .black
+        lbl.textColor = Colors.black
         lbl.lineBreakMode = .byTruncatingTail
         return lbl
     }()
@@ -65,7 +65,7 @@ class DebateTableViewCell: UITableViewCell {
 //        lbl.text = "Владимир Жириновский"
         lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.font = UIFont(name: "SFProDisplay-SemiBold", size: 17)
-        lbl.textColor = .black
+        lbl.textColor = Colors.black
         lbl.lineBreakMode = .byTruncatingTail
         return lbl
     }()
@@ -102,7 +102,7 @@ class DebateTableViewCell: UITableViewCell {
 //        lbl.text = "Выборы в московскую городскую Думу"
         lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.font = UIFont(name: "SFProDisplay-SemiBold", size: 15)
-        lbl.textColor = .black
+        lbl.textColor = Colors.black
         lbl.lineBreakMode = .byTruncatingTail
         return lbl
     }()
@@ -116,7 +116,7 @@ class DebateTableViewCell: UITableViewCell {
 //        lbl.text = maintext
         lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.font = UIFont(name: "SFProText-Regular", size: 13)
-        lbl.textColor = .black
+        lbl.textColor = Colors.black
 //        lbl.lineBreakMode = .byTruncatingTail
         
 //        let paragraphStyle = NSMutableParagraphStyle()
@@ -140,7 +140,7 @@ class DebateTableViewCell: UITableViewCell {
         lbl.text = "Новый ответ"
         lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.font = UIFont(name: "SFProText-Regular", size: 13)
-        lbl.textColor = #colorLiteral(red: 0.2509803922, green: 0.3294117647, blue: 0.6980392157, alpha: 1)
+        lbl.textColor = Colors.darkBlue
         lbl.lineBreakMode = .byTruncatingTail
         return lbl
     }()

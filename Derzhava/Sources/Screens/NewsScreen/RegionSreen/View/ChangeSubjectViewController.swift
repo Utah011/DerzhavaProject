@@ -14,36 +14,14 @@ class ChangeSubjectViewController: UIViewController, UISearchBarDelegate {
     let searchController = UISearchController(searchResultsController: nil)
     public var completion: ((String?) -> Void)?
     
-//    let FlowVC = FlowViewController()
-
-    
-//    let myScrollView:UIScrollView = {
-//        let scrl = UIScrollView()
-//        scrl.translatesAutoresizingMaskIntoConstraints = false
-//        return scrl
-//    }()
-    
-    
     var arrayOfTwoObjects = ["Российская Федерация","Москва"]
     
     var filteredData: [String]!
     var filteredDataOfTwoSubjects: [String]!
-
-    
-//    let tableview:UITableView = {
-//        let table = UITableView()
-//        table.translatesAutoresizingMaskIntoConstraints = false
-//        table.separatorStyle = .singleLine
-//        return table
-//    }()
-    
-//    deinit {
-//        NotificationCenter.default.removeObserver(self)
-//    }
       
     override func viewDidLoad() {
         super.viewDidLoad()
-//        view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        
         setNavigationController()
         setSearchController()
         setTableView()
@@ -51,36 +29,11 @@ class ChangeSubjectViewController: UIViewController, UISearchBarDelegate {
         filteredData = regionsTextArray
         filteredDataOfTwoSubjects = arrayOfTwoObjects
         
-//        navigationItem.title = "Выбор субъекта"
-//        navigationItem.largeTitleDisplayMode = .never
-//        navigationItem.searchController = searchController
-//        searchController.searchBar.delegate = self
-//        navigationItem.setHidesBackButton(false, animated: true)
-        
-//        [tableview].forEach{self.view.addSubview($0)}
-//        contentView.tableview.delegate = self
-//        contentView.tableview.dataSource = self
-//        contentView.tableview.register(ChangeSubjectTableViewCell.self, forCellReuseIdentifier: "ChangeSubjectTableViewCell")
-//        contentView.tableview.register(MyCustomHeaderForFullNews.self, forHeaderFooterViewReuseIdentifier: "MyCustomHeaderForFullNews")
-//        contentView.tableview.rowHeight = 115
-        
-//        searchController.searchBar.showsCancelButton = false
-//        searchController.searchBar.placeholder = "Поиск"
-        
         print(contentView.tableview.rowHeight)
         print(filteredData.count)
         print(CGFloat(filteredData.count))
         print(contentView.tableview.rowHeight * CGFloat(filteredData.count))
-//        setConstraint()
-        
-
       }
-    
-//    @objc
-//    func changeColor(){
-//        view.backgroundColor = .systemTeal
-//        print("HAY CHANGE SUBJECT")
-//    }
     
     override func loadView() {
         view = contentView
@@ -121,14 +74,6 @@ class ChangeSubjectViewController: UIViewController, UISearchBarDelegate {
         }
         self.contentView.tableview.reloadData()
     }
-    
-//    func setConstraint(){
-//        tableview.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
-//        tableview.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0).isActive = true
-//        tableview.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0).isActive = true
-//        tableview.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
-//    }
-
 }
 
 extension ChangeSubjectViewController: UITableViewDelegate, UITableViewDataSource{
@@ -192,8 +137,6 @@ extension ChangeSubjectViewController: UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-//        let defaultVC = NewsViewController()
         
         switch indexPath.section {
         case 0:

@@ -23,13 +23,13 @@ class NewsScreenView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = #colorLiteral(red: 0.9803921569, green: 0.9803921569, blue: 0.9803921569, alpha: 1)
+        backgroundColor = Colors.background
         
         tableview.translatesAutoresizingMaskIntoConstraints = false
         tableview.separatorStyle = .none
-        tableview.backgroundColor = #colorLiteral(red: 0.9803921569, green: 0.9803921569, blue: 0.9803921569, alpha: 1)
+        tableview.backgroundColor = Colors.background
         addSubview(tableview)
-        
+                
         firstView.translatesAutoresizingMaskIntoConstraints = false
         addSubview(firstView)
         
@@ -37,7 +37,7 @@ class NewsScreenView: UIView {
         nameLabel.textAlignment = .left
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         nameLabel.font = UIFont(name: "SFProDisplay-Bold", size: 30)
-        nameLabel.textColor = .black
+        nameLabel.textColor = Colors.black
         nameLabel.lineBreakMode = .byClipping
         firstView.addSubview(nameLabel)
         
@@ -46,27 +46,27 @@ class NewsScreenView: UIView {
         arrowdown.image = UIImage(named: "arrowdown")
         firstView.addSubview(arrowdown)
         
-        headerView.backgroundColor = #colorLiteral(red: 0.9803921569, green: 0.9803921569, blue: 0.9803921569, alpha: 1)
+        headerView.backgroundColor = Colors.background
         headerView.clipsToBounds = true
         headerView.layer.borderWidth = 0.5
         headerView.layer.borderColor = #colorLiteral(red: 0.7764705882, green: 0.7764705882, blue: 0.7843137255, alpha: 1)
         
         newRequestToReplyImageView.clipsToBounds = true
         newRequestToReplyImageView.layer.cornerRadius = 12.5
-        newRequestToReplyImageView.backgroundColor = #colorLiteral(red: 0.2509803922, green: 0.3294117647, blue: 0.6980392157, alpha: 1)
+        newRequestToReplyImageView.backgroundColor = Colors.darkBlue
         headerView.addSubview(newRequestToReplyImageView)
         
         newRequestToReplyNumberLabel.text = "2"
         newRequestToReplyNumberLabel.font = UIFont(name: "SFProDisplay-Regular", size: 13)
-        newRequestToReplyNumberLabel.textColor = .white
+        newRequestToReplyNumberLabel.textColor = Colors.white
         newRequestToReplyNumberLabel.textAlignment = .center
         headerView.addSubview(newRequestToReplyNumberLabel)
         
         newRequestToReplyLabel.text = "Новых просьбы ответить"
         newRequestToReplyLabel.font = UIFont(name: "SFProDisplay-Regular", size: 13)
-        newRequestToReplyLabel.textColor = .white
+        newRequestToReplyLabel.textColor = Colors.white
         newRequestToReplyLabel.textAlignment = .center
-        newRequestToReplyLabel.textColor = #colorLiteral(red: 0.2509803922, green: 0.3294117647, blue: 0.6980392157, alpha: 1)
+        newRequestToReplyLabel.textColor = Colors.darkBlue
         headerView.addSubview(newRequestToReplyLabel)
         
     }

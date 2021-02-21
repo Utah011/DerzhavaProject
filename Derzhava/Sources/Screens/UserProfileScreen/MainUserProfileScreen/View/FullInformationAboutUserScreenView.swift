@@ -13,7 +13,7 @@ class FullInformationAboutUserScreenView: UIView {
     
     enum Constants {
         static let segmentedControlHeight: CGFloat = 40
-        static let underlineViewColor: UIColor = #colorLiteral(red: 0.2509803922, green: 0.3294117647, blue: 0.6980392157, alpha: 1)
+        static let underlineViewColor: UIColor = Colors.darkBlue ?? UIColor.red
         static let underlineViewHeight: CGFloat = 2
     }
 
@@ -27,9 +27,7 @@ class FullInformationAboutUserScreenView: UIView {
         return bottomUnderlineView.leftAnchor.constraint(equalTo: segmentedControl.leftAnchor)
     }()
     
-//    let justview = UIView()
     let tableview = UITableView()
-//    let topView = UIView()
     let logoImageView = UIImageView()
     let veryficationButton = UIButton()
     var statement = false
@@ -45,12 +43,12 @@ class FullInformationAboutUserScreenView: UIView {
         
         tableview.translatesAutoresizingMaskIntoConstraints = false
         tableview.separatorStyle = .none
-        tableview.backgroundColor = #colorLiteral(red: 0.9529411765, green: 0.9568627451, blue: 0.9607843137, alpha: 1)
+        tableview.backgroundColor = Colors.background
         addSubview(tableview)
 
         // Container view of the segmented control
 
-        segmentedControlContainerView.backgroundColor = #colorLiteral(red: 0.9529411765, green: 0.9568627451, blue: 0.9607843137, alpha: 1)
+        segmentedControlContainerView.backgroundColor = Colors.background
         segmentedControlContainerView.translatesAutoresizingMaskIntoConstraints = false
         myViewHeader.addSubview(segmentedControlContainerView)
         
@@ -95,13 +93,6 @@ class FullInformationAboutUserScreenView: UIView {
         bottomUnderlineView.translatesAutoresizingMaskIntoConstraints = false
         segmentedControlContainerView.addSubview(bottomUnderlineView)
 
-
-//        justview.translatesAutoresizingMaskIntoConstraints = false
-//        justview.backgroundColor = .systemBlue
-//
-//        topView.translatesAutoresizingMaskIntoConstraints = false
-//        topView.backgroundColor = #colorLiteral(red: 0.9529411765, green: 0.9568627451, blue: 0.9607843137, alpha: 1)
-
         logoImageView.translatesAutoresizingMaskIntoConstraints = false
         logoImageView.layer.masksToBounds = true
         logoImageView.clipsToBounds = true
@@ -130,7 +121,7 @@ class FullInformationAboutUserScreenView: UIView {
         }
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         nameLabel.font = UIFont(name: "SFProDisplay-SemiBold", size: 20)
-        nameLabel.textColor = .black
+        nameLabel.textColor = Colors.black
         nameLabel.lineBreakMode = .byTruncatingTail
         myViewHeader.addSubview(nameLabel)
 
@@ -148,7 +139,7 @@ class FullInformationAboutUserScreenView: UIView {
         positionLabel.lineBreakMode = .byWordWrapping
         myViewHeader.addSubview(positionLabel)
 
-        myViewHeader.backgroundColor = #colorLiteral(red: 0.9529411765, green: 0.9568627451, blue: 0.9607843137, alpha: 1)
+        myViewHeader.backgroundColor = Colors.background
         myViewHeader.frame = CGRect(x: 0, y: 0, width: frame.width, height: 273)
 
 

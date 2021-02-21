@@ -23,7 +23,7 @@ class DebateThemeScreenView: UIView {
         tableview.separatorStyle = .singleLine
         addSubview(tableview)
         
-        myHeaderView.backgroundColor = #colorLiteral(red: 0.9568627451, green: 0.9568627451, blue: 0.9568627451, alpha: 1)
+        myHeaderView.backgroundColor = Colors.background
         myHeaderView.frame = CGRect(x: 0, y: 0, width: frame.width, height: 78)
         
         myHeaderTitle.translatesAutoresizingMaskIntoConstraints = false

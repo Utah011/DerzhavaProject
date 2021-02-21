@@ -15,7 +15,6 @@ class FlowCollectionViewCell: UICollectionViewCell {
         let lbl = UILabel()
         lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.numberOfLines = 0
-        //lbl.text = "Почему ВВП не растет с 2008 года?"
         lbl.font = UIFont(name: "SFProDisplay-Semibold", size: 15)
         return lbl
     }()
@@ -24,7 +23,6 @@ class FlowCollectionViewCell: UICollectionViewCell {
         let lbl = UILabel()
         lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.numberOfLines = 0
-        //lbl.text = "Несмотря на внешнее сходство с кризисами 1998 и 2008 гг., последний спад оказался куда глубже и сложнее. Его можно сравнить лишь трансформационным периодом 1990-х гг."
         lbl.font = UIFont(name: "SFProText-Regular", size: 13)
         return lbl
     }()
@@ -135,7 +133,7 @@ class FlowCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
-        contentView.backgroundColor = .white
+        contentView.backgroundColor = Colors.white
         addSubviews()
         setConstrains()
         print(";eorngorngoiwgnwgNWOGNWEGWEIOG")
@@ -181,7 +179,6 @@ class FlowCollectionViewCell: UICollectionViewCell {
         
         secondImageView.topAnchor.constraint(equalTo: newOpinionsLabel.bottomAnchor, constant: 10).isActive = true
         secondImageView.leftAnchor.constraint(equalTo: firstImageView.rightAnchor, constant: 15).isActive = true
-//        secondImageView.leftAnchor.constraint(equalTo: firstImageView.rightAnchor, constant: contentView.frame.width / 4 - 65).isActive = true
         secondImageView.widthAnchor.constraint(equalToConstant: 65).isActive = true
         secondImageView.heightAnchor.constraint(equalToConstant: 65).isActive = true
 

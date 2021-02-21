@@ -7,9 +7,7 @@
 //
 
 import Foundation
-
 import UIKit
-//import ExpandableLabel
 
 class AuthorDebateTableViewCell: UITableViewCell {
     
@@ -23,8 +21,7 @@ class AuthorDebateTableViewCell: UITableViewCell {
     let betweenCellSpaceView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        //view.backgroundColor = #colorLiteral(red: 0.9764705882, green: 0.9764705882, blue: 0.9764705882, alpha: 0.94)
-        view.backgroundColor = #colorLiteral(red: 0.9568627451, green: 0.9568627451, blue: 0.9568627451, alpha: 1)
+        view.backgroundColor = Colors.background
         return view
     }()
     
@@ -38,8 +35,6 @@ class AuthorDebateTableViewCell: UITableViewCell {
         return img
     }()
     
-
-    
     let firstNameLabel:UILabel = {
         let lbl = UILabel()
         lbl.numberOfLines = 1
@@ -47,12 +42,10 @@ class AuthorDebateTableViewCell: UITableViewCell {
         lbl.text = "Денис Мантуров"
         lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.font = UIFont(name: "SFProDisplay-SemiBold", size: 17)
-        lbl.textColor = .black
+        lbl.textColor = Colors.black
         lbl.lineBreakMode = .byTruncatingTail
         return lbl
     }()
-    
-
     
     let timeLabel:UILabel = {
         let lbl = UILabel()
@@ -65,7 +58,6 @@ class AuthorDebateTableViewCell: UITableViewCell {
         lbl.lineBreakMode = .byTruncatingTail
         return lbl
     }()
-    
     
     let themeLabel:UILabel = {
         let lbl = UILabel()
@@ -86,7 +78,7 @@ class AuthorDebateTableViewCell: UITableViewCell {
         lbl.text = "Выборы в московскую городскую Думу"
         lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.font = UIFont(name: "SFProDisplay-SemiBold", size: 15)
-        lbl.textColor = .black
+        lbl.textColor = Colors.black
         lbl.lineBreakMode = .byTruncatingTail
         return lbl
     }()
@@ -95,22 +87,18 @@ class AuthorDebateTableViewCell: UITableViewCell {
         let lbl = UILabel()
         lbl.numberOfLines = 4
         lbl.textAlignment = .left
-        //lbl.text = "Леонид: Кроме того, как утверждают в СК, «ни в одном из предоставленных медицинскими учреждениями документов такая информация также не содержится, как утверждают в СК, «ни в одном из предоставленных медицинскими учреждениями документов такая информация также не содержится"
         let maintext = "Леонид: Кроме того, как утверждают в СК, «ни в одном из предоставленных медицинскими учреждениями документов такая информация также содержится». Кроме того, как утверждают в СК, «ни в одном из предоставленных медицинскими учреждениями документов такая информация также содержится» Кроме того, как утверждают в СК, «ни в одном из предоставленных медицинскими учреждениями документов такая информация также содержится»"
         lbl.text = maintext
         lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.font = UIFont(name: "SFProText-Regular", size: 13)
-        lbl.textColor = .black
+        lbl.textColor = Colors.black
         lbl.lineBreakMode = .byTruncatingTail
         
         let paragraphStyle = NSMutableParagraphStyle()
-        //line height size
         paragraphStyle.lineSpacing = 1.8
         let attrString = NSMutableAttributedString(string: maintext)
         attrString.addAttribute(NSAttributedString.Key.paragraphStyle, value:paragraphStyle, range:NSMakeRange(0, attrString.length))
         lbl.attributedText = attrString
-        //lbl.textAlignment = NSTextAlignment.center
-        
         return lbl
     }()
     
@@ -121,7 +109,7 @@ class AuthorDebateTableViewCell: UITableViewCell {
         lbl.text = "Новый ответ"
         lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.font = UIFont(name: "SFProText-Regular", size: 13)
-        lbl.textColor = #colorLiteral(red: 0.2509803922, green: 0.3294117647, blue: 0.6980392157, alpha: 1)
+        lbl.textColor = Colors.darkBlue
         lbl.lineBreakMode = .byTruncatingTail
         return lbl
     }()
@@ -130,7 +118,7 @@ class AuthorDebateTableViewCell: UITableViewCell {
         let btn = UIButton()
         btn.translatesAutoresizingMaskIntoConstraints = false
         btn.setTitle("Новый вызов", for: .normal)
-        btn.setTitleColor(#colorLiteral(red: 0.2509803922, green: 0.3294117647, blue: 0.6980392157, alpha: 1), for: .normal)
+        btn.setTitleColor(Colors.darkBlue, for: .normal)
         btn.titleLabel?.font = UIFont(name: "SFProDisplay-Semibold", size: 13)
         return btn
     }()
@@ -148,28 +136,19 @@ class AuthorDebateTableViewCell: UITableViewCell {
 
     
     func addSubViews(){
-//        [mainView].forEach{self.contentView.addSubview($0)}
         [firstPersonImageView,firstNameLabel,themeLabel,timeLabel,mainThemeLabel,mainTextLabel,newAnswerLabel,betweenCellSpaceView].forEach{self.contentView.addSubview($0)}
         betweenCellSpaceView.addSubview(newCallButtom)
     }
 
     func setConstraints(){
         
-//        mainView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0).isActive = true
-//        mainView.widthAnchor.constraint(equalTo: contentView.widthAnchor).isActive = true
-//        mainView.heightAnchor.constraint(equalToConstant: 225).isActive = true
-//        mainView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 0).isActive = true
-        
         betweenCellSpaceView.topAnchor.constraint(equalTo: newAnswerLabel.bottomAnchor, constant: 10).isActive = true
         betweenCellSpaceView.widthAnchor.constraint(equalTo: contentView.widthAnchor).isActive = true
-//        betweenCellSpaceView.heightAnchor.constraint(equalToConstant: 30).isActive = true
         betweenCellSpaceView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 0).isActive = true
         
         newCallButtom.topAnchor.constraint(equalTo: betweenCellSpaceView.topAnchor, constant: 5).isActive = true
         newCallButtom.widthAnchor.constraint(equalTo: contentView.widthAnchor).isActive = true
         newCallButtom.heightAnchor.constraint(equalToConstant: 18).isActive = true
-//        newCallButtom.leftAnchor.constraint(equalTo: betweenCellSpaceView.leftAnchor, constant: 5).isActive = true
-//        newCallButtom.heightAnchor.constraint(equalToConstant: 15).isActive = true
 
         firstPersonImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 13.5).isActive = true
         firstPersonImageView.leftAnchor.constraint(equalTo: contentView.leftAnchor,constant: 15).isActive = true
@@ -184,25 +163,16 @@ class AuthorDebateTableViewCell: UITableViewCell {
         
         timeLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 15).isActive = true
         timeLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor,constant: -15).isActive = true
-        //firstNameLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        //timeLabel.widthAnchor.constraint(equalToConstant: 34).isActive = true
         
         mainThemeLabel.topAnchor.constraint(equalTo: firstPersonImageView.bottomAnchor, constant: 14.5).isActive = true
         mainThemeLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor,constant: 15).isActive = true
-        //firstNameLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        //mainThemeLabel.widthAnchor.constraint(equalToConstant: 345).isActive = true
         mainThemeLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -15).isActive = true
         
         mainTextLabel.topAnchor.constraint(equalTo: mainThemeLabel.bottomAnchor, constant: 5).isActive = true
         mainTextLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor,constant: 15).isActive = true
-//        firstNameLabel.heightAnchor.constraint(equalToConstant: 82).isActive = true
-        //mainTextLabel.widthAnchor.constraint(equalToConstant: 345).isActive = true
         mainTextLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -15).isActive = true
         
         newAnswerLabel.topAnchor.constraint(equalTo: mainTextLabel.bottomAnchor, constant: 10).isActive = true
-        //newAnswerLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor,constant: 15).isActive = true
-        //firstNameLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        //mainTextLabel.widthAnchor.constraint(equalToConstant: 345).isActive = true
         newAnswerLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -18).isActive = true
         
         

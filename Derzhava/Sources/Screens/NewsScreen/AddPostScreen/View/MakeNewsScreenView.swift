@@ -34,11 +34,10 @@ class MakeNewsScreenView: UIView {
 
         loadImageButton.translatesAutoresizingMaskIntoConstraints = false
         loadImageButton.clipsToBounds = true
-        loadImageButton.backgroundColor = #colorLiteral(red: 0.9803921569, green: 0.9803921569, blue: 0.9803921569, alpha: 1)
-        loadImageButton.layer.borderColor = #colorLiteral(red: 0.2509803922, green: 0.3294117647, blue: 0.6980392157, alpha: 1)
+        loadImageButton.backgroundColor = Colors.background
+        loadImageButton.layer.borderColor = Colors.darkBlue?.cgColor
         loadImageButton.layer.borderWidth = 1
         loadImageButton.layer.cornerRadius = 8
-//        loadImageButton.addTarget(self, action: #selector(openGallery), for: .touchUpInside)
         scrollview.addSubview(loadImageButton)
         
         imageForLoadButton.translatesAutoresizingMaskIntoConstraints = false
@@ -48,13 +47,13 @@ class MakeNewsScreenView: UIView {
         labelForLoadButton.translatesAutoresizingMaskIntoConstraints = false
         labelForLoadButton.text = "Загрузить изображение"
         labelForLoadButton.font = UIFont(name: "SFProDisplay-Regular", size: 17)
-        labelForLoadButton.textColor = #colorLiteral(red: 0.2509803922, green: 0.3294117647, blue: 0.6980392157, alpha: 1)
+        labelForLoadButton.textColor = Colors.darkBlue
         loadImageButton.addSubview(labelForLoadButton)
         
         newsImageView.translatesAutoresizingMaskIntoConstraints = false
         newsImageView.layer.cornerRadius = 10
         newsImageView.clipsToBounds = true
-        newsImageView.backgroundColor = #colorLiteral(red: 0.9529411765, green: 0.9568627451, blue: 0.9607843137, alpha: 1)
+        newsImageView.backgroundColor = Colors.background
         newsImageView.contentMode = .scaleAspectFill
         newsImageView.isHidden = true
         scrollview.addSubview(newsImageView)
@@ -62,7 +61,6 @@ class MakeNewsScreenView: UIView {
         deleteImageButton.translatesAutoresizingMaskIntoConstraints = false
         deleteImageButton.setImage(UIImage(named: "deleteimageicon"), for: .normal)
         deleteImageButton.isHidden = true
-//        deleteImageButton.addTarget(self, action: #selector(deleteImageAction), for: .touchUpInside)
         scrollview.addSubview(deleteImageButton)
         
         titleTextView.translatesAutoresizingMaskIntoConstraints = false
@@ -80,29 +78,27 @@ class MakeNewsScreenView: UIView {
         scrollview.addSubview(mainTextTextView)
                 
         addPoliticianButton.translatesAutoresizingMaskIntoConstraints = false
-        addPoliticianButton.backgroundColor = .white
+        addPoliticianButton.backgroundColor = Colors.white
         addPoliticianButton.layer.borderWidth = 0.5
-        addPoliticianButton.layer.borderColor = #colorLiteral(red: 0.9529411765, green: 0.9568627451, blue: 0.9607843137, alpha: 1)
-//        addPoliticianButton.addTarget(self, action: #selector(goToAddPoloticiansScreen), for: .touchUpInside)
+        addPoliticianButton.layer.borderColor = Colors.background?.cgColor
         addSubview(addPoliticianButton)
         
         labelForAddPoliticianButton.translatesAutoresizingMaskIntoConstraints = false
         labelForAddPoliticianButton.text = "Добавить политиков (макс. 5)"
         labelForAddPoliticianButton.font = UIFont(name: "SFProDisplay-Regular", size: 17)
-        labelForAddPoliticianButton.textColor = #colorLiteral(red: 0.2509803922, green: 0.3294117647, blue: 0.6980392157, alpha: 1)
+        labelForAddPoliticianButton.textColor = Colors.darkBlue
         addPoliticianButton.addSubview(labelForAddPoliticianButton)
         
         chooseDataAndTimeButton.translatesAutoresizingMaskIntoConstraints = false
-        chooseDataAndTimeButton.backgroundColor = .white
+        chooseDataAndTimeButton.backgroundColor = Colors.white
         chooseDataAndTimeButton.layer.borderWidth = 0.5
-        chooseDataAndTimeButton.layer.borderColor = #colorLiteral(red: 0.9529411765, green: 0.9568627451, blue: 0.9607843137, alpha: 1)
-//        chooseDataAndTimeButton.addTarget(self, action: #selector(goToChooseTimeAndPriceScreen), for: .touchUpInside)
+        chooseDataAndTimeButton.layer.borderColor = Colors.background?.cgColor
         addSubview(chooseDataAndTimeButton)
         
         labelForChooseDataAndTimeButton.translatesAutoresizingMaskIntoConstraints = false
         labelForChooseDataAndTimeButton.text = "Выбрать дату и время публикации"
         labelForChooseDataAndTimeButton.font = UIFont(name: "SFProDisplay-Regular", size: 17)
-        labelForChooseDataAndTimeButton.textColor = #colorLiteral(red: 0.2509803922, green: 0.3294117647, blue: 0.6980392157, alpha: 1)
+        labelForChooseDataAndTimeButton.textColor = Colors.darkBlue
         chooseDataAndTimeButton.addSubview(labelForChooseDataAndTimeButton)
 
     }

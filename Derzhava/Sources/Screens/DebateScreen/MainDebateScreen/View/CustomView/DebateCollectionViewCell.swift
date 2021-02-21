@@ -16,12 +16,12 @@ class DebateCollectionViewCell: UICollectionViewCell {
         lbl.textAlignment = .center
         lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.font = UIFont(name: "SFProDisplay-Bold", size: 15)
-        lbl.textColor = #colorLiteral(red: 0.2509803922, green: 0.3294117647, blue: 0.6980392157, alpha: 1)
+        lbl.textColor = Colors.darkBlue
         lbl.lineBreakMode = .byWordWrapping
-        lbl.backgroundColor = #colorLiteral(red: 0.9568627451, green: 0.9568627451, blue: 0.9568627451, alpha: 1)
+        lbl.backgroundColor = Colors.background
         lbl.layer.cornerRadius = 5
         lbl.layer.borderWidth = 1.3
-        lbl.layer.borderColor = #colorLiteral(red: 0.2509803922, green: 0.3294117647, blue: 0.6980392157, alpha: 1)
+        lbl.layer.borderColor = Colors.darkBlue?.cgColor
         return lbl
     }()
     

@@ -16,27 +16,12 @@ class FlowViewController: UIViewController, UISearchBarDelegate, CellWithCollect
     
     let contentView = FlowScreenView()
     let searchController = UISearchController(searchResultsController: nil)
-    
-//    let recognizer = UITapGestureRecognizer(target: self, action: #selector(goToFullEternalQuestions))
 
-//    let tableview:UITableView = {
-//        let table = UITableView()
-//        table.translatesAutoresizingMaskIntoConstraints = false
-//        table.separatorStyle = .none
-//        table.backgroundColor = #colorLiteral(red: 0.9803921569, green: 0.9803921569, blue: 0.9803921569, alpha: 1)
-//        return table
-//    }()
-//
-//    let nc = NotificationCenter.default
-
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = #colorLiteral(red: 0.9568627451, green: 0.9568627451, blue: 0.9568627451, alpha: 1)
+        view.backgroundColor = Colors.background
         setNavigationController()
         setTableView()
-//        addSubviews()
-//        setConstrains()
     }
     
     @objc
@@ -50,7 +35,7 @@ class FlowViewController: UIViewController, UISearchBarDelegate, CellWithCollect
         navigationController?.setNavigationBarHidden(false, animated: true)
         navigationItem.title = "Поток"
         navigationController?.navigationBar.prefersLargeTitles = true
-        navigationController?.navigationBar.backgroundColor = #colorLiteral(red: 0.9568627451, green: 0.9568627451, blue: 0.9568627451, alpha: 1)
+        navigationController?.navigationBar.backgroundColor = Colors.background
         navigationItem.searchController = searchController
         searchController.searchBar.delegate = self
         searchController.searchBar.showsCancelButton = false
@@ -59,13 +44,13 @@ class FlowViewController: UIViewController, UISearchBarDelegate, CellWithCollect
         let backItem = UIBarButtonItem()
         backItem.title = "Назад"
         navigationItem.backBarButtonItem = backItem
-        navigationItem.backBarButtonItem?.tintColor = #colorLiteral(red: 0.2509803922, green: 0.3294117647, blue: 0.6980392157, alpha: 1)
+        navigationItem.backBarButtonItem?.tintColor = Colors.darkBlue
         
         if UserDefaults.standard.bool(forKey: "isUserLoggedIn"){
             navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Создать твит", style: .plain, target: self, action: #selector(goToMakeATwitScreen))
             print("YOU ARE IN!")
         }
-        navigationItem.leftBarButtonItem?.tintColor = #colorLiteral(red: 0.2509803922, green: 0.3294117647, blue: 0.6980392157, alpha: 1)
+        navigationItem.leftBarButtonItem?.tintColor = Colors.darkBlue
     }
     
     override func loadView() {
@@ -83,17 +68,6 @@ class FlowViewController: UIViewController, UISearchBarDelegate, CellWithCollect
     func nothingHere(){
         
     }
-    
-//    func addSubviews(){
-//        [tableview].forEach{self.view.addSubview($0)}
-//    }
-//
-//    func setConstrains(){
-//        tableview.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
-//        tableview.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0).isActive = true
-//        tableview.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0).isActive = true
-//        tableview.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
-//    }
     
     func setTableView(){
         contentView.tableview.delegate = self
@@ -215,8 +189,6 @@ extension FlowViewController: UITableViewDelegate, UITableViewDataSource {
                 cell.photoImageView.image = answersArray[indexPath.row].photo
                 cell.nameLabel.text = answersArray[indexPath.row].namesurname
                 
-//                cell.secondPhotoImageView.image = answersArray[indexPath.row].photo
-//                cell.secondNameLabel.text = answersArray[indexPath.row].namesurname
                 cell.secondPhotoImageView.image = UIImage(named: "kud")
                 cell.secondNameLabel.text = "Алексей Кудрин"
                 
@@ -238,6 +210,3 @@ extension FlowViewController: UITableViewDelegate, UITableViewDataSource {
     
     
 }
-
-//if indexPath.row % 2 == 0
-

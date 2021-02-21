@@ -13,7 +13,6 @@ class MyCustomHeaderForFullNews: UITableViewHeaderFooterView {
     let title:UILabel = {
         let tlt = UILabel()
         tlt.translatesAutoresizingMaskIntoConstraints = false
-//        tlt.font = UIFont(name: "SFProDisplay-Bold", size: 22)
         return tlt
     }()
     let image = UIImageView()
@@ -43,14 +42,10 @@ class MyCustomHeaderForFullNews: UITableViewHeaderFooterView {
         //contentView.addSubview(image)
         contentView.addSubview(title)
         contentView.addSubview(buttonImage)
-        contentView.backgroundColor = #colorLiteral(red: 0.9568627451, green: 0.9568627451, blue: 0.9568627451, alpha: 1)
+        contentView.backgroundColor = Colors.background
 
-        // Center the image vertically and place it near the leading
-        // edge of the view. Constrain its width and height to 50 points.
         NSLayoutConstraint.activate([
             title.leadingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.leadingAnchor),
-            //title.widthAnchor.constraint(equalToConstant: 300),
-            //title.heightAnchor.constraint(equalToConstant: 60),
             title.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 30)
         ])
         
@@ -69,7 +64,7 @@ class MyCustomSearchFooterForFullNews: UITableViewHeaderFooterView {
     
     let footerForTableView:UIView = {
         let view = UIView()
-        view.backgroundColor = #colorLiteral(red: 0.9568627451, green: 0.9568627451, blue: 0.9568627451, alpha: 1)
+        view.backgroundColor = Colors.background
         return view
     }()
     
@@ -87,7 +82,7 @@ class MyCustomSearchFooterForFullNews: UITableViewHeaderFooterView {
         txt.placeholder = "Напишите ответ"
         txt.clipsToBounds = true
         txt.layer.cornerRadius = 10
-        txt.backgroundColor = .white
+        txt.backgroundColor = Colors.white
         txt.layer.borderWidth = 1
         txt.layer.borderColor = #colorLiteral(red: 0.862745098, green: 0.862745098, blue: 0.8666666667, alpha: 1)
         return txt
@@ -104,9 +99,9 @@ class MyCustomSearchFooterForFullNews: UITableViewHeaderFooterView {
 
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
-        contentView.backgroundColor = #colorLiteral(red: 0.9568627451, green: 0.9568627451, blue: 0.9568627451, alpha: 1)
+        contentView.backgroundColor = Colors.background
         contentView.layer.borderWidth = 0.5
-        contentView.layer.borderColor = #colorLiteral(red: 0.7764705882, green: 0.7764705882, blue: 0.7843137255, alpha: 1)
+        contentView.layer.borderColor = Colors.background?.cgColor
         
         addsubviews()
         setConstrains()

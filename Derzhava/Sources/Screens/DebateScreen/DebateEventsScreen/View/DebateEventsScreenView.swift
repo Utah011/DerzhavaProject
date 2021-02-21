@@ -18,7 +18,7 @@ class DebateEventsScreenView: UIView {
         backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         
         tableview.translatesAutoresizingMaskIntoConstraints = false
-        tableview.separatorStyle = .singleLine
+        tableview.separatorStyle = .none
         addSubview(tableview)
     }
     

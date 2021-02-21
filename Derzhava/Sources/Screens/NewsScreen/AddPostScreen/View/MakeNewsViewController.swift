@@ -20,8 +20,8 @@ class MakeNewsViewController: UIViewController, UIImagePickerControllerDelegate,
         let btn = UIButton()
         btn.translatesAutoresizingMaskIntoConstraints = false
         btn.clipsToBounds = true
-        btn.backgroundColor = #colorLiteral(red: 0.9803921569, green: 0.9803921569, blue: 0.9803921569, alpha: 1)
-        btn.layer.borderColor = #colorLiteral(red: 0.2509803922, green: 0.3294117647, blue: 0.6980392157, alpha: 1)
+        btn.backgroundColor = Colors.background
+        btn.layer.borderColor = Colors.darkBlue?.cgColor
         btn.layer.borderWidth = 1
         btn.layer.cornerRadius = 8
         btn.addTarget(self, action: #selector(openGallery), for: .touchUpInside)
@@ -40,21 +40,21 @@ class MakeNewsViewController: UIViewController, UIImagePickerControllerDelegate,
         lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.text = "Загрузить изображение"
         lbl.font = UIFont(name: "SFProDisplay-Regular", size: 17)
-        lbl.textColor = #colorLiteral(red: 0.2509803922, green: 0.3294117647, blue: 0.6980392157, alpha: 1)
+        lbl.textColor = Colors.darkBlue
         return lbl
     }()
-//
+    
     let imagePicker:UIImagePickerController = {
         let ip = UIImagePickerController()
         return ip
     }()
-//
+    
     var newsImageView:UIImageView = {
         let img = UIImageView()
         img.translatesAutoresizingMaskIntoConstraints = false
         img.layer.cornerRadius = 10
         img.clipsToBounds = true
-        img.backgroundColor = #colorLiteral(red: 0.9529411765, green: 0.9568627451, blue: 0.9607843137, alpha: 1)
+        img.backgroundColor = Colors.background
         img.contentMode = .scaleAspectFill
         img.isHidden = true
         return img
@@ -92,16 +92,15 @@ class MakeNewsViewController: UIViewController, UIImagePickerControllerDelegate,
     let scrollview:UIScrollView = {
         let view = UIScrollView()
         view.translatesAutoresizingMaskIntoConstraints = false
-//        view.backgroundColor = .systemPink
         return view
     }()
 
     let addPoliticianButton:UIButton = {
         let btn = UIButton()
         btn.translatesAutoresizingMaskIntoConstraints = false
-        btn.backgroundColor = .white
+        btn.backgroundColor = Colors.white
         btn.layer.borderWidth = 0.5
-        btn.layer.borderColor = #colorLiteral(red: 0.9529411765, green: 0.9568627451, blue: 0.9607843137, alpha: 1)
+        btn.layer.borderColor = Colors.background?.cgColor
         btn.addTarget(self, action: #selector(goToAddPoloticiansScreen), for: .touchUpInside)
         return btn
     }()
@@ -111,16 +110,16 @@ class MakeNewsViewController: UIViewController, UIImagePickerControllerDelegate,
         lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.text = "Добавить политиков (макс. 5)"
         lbl.font = UIFont(name: "SFProDisplay-Regular", size: 17)
-        lbl.textColor = #colorLiteral(red: 0.2509803922, green: 0.3294117647, blue: 0.6980392157, alpha: 1)
+        lbl.textColor = Colors.darkBlue
         return lbl
     }()
 
     let chooseDataAndTimeButton:UIButton = {
         let btn = UIButton()
         btn.translatesAutoresizingMaskIntoConstraints = false
-        btn.backgroundColor = .white
+        btn.backgroundColor = Colors.white
         btn.layer.borderWidth = 0.5
-        btn.layer.borderColor = #colorLiteral(red: 0.9529411765, green: 0.9568627451, blue: 0.9607843137, alpha: 1)
+        btn.layer.borderColor = Colors.background?.cgColor
         btn.addTarget(self, action: #selector(goToChooseTimeAndPriceScreen), for: .touchUpInside)
         return btn
     }()
@@ -130,7 +129,7 @@ class MakeNewsViewController: UIViewController, UIImagePickerControllerDelegate,
         lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.text = "Выбрать дату и время публикации"
         lbl.font = UIFont(name: "SFProDisplay-Regular", size: 17)
-        lbl.textColor = #colorLiteral(red: 0.2509803922, green: 0.3294117647, blue: 0.6980392157, alpha: 1)
+        lbl.textColor = Colors.darkBlue
         return lbl
     }()
     
@@ -141,7 +140,7 @@ class MakeNewsViewController: UIViewController, UIImagePickerControllerDelegate,
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = #colorLiteral(red: 0.9803921569, green: 0.9803921569, blue: 0.9803921569, alpha: 1)
+        view.backgroundColor = Colors.background
 
         setNavigationController()
         setTextView()
@@ -176,7 +175,6 @@ class MakeNewsViewController: UIViewController, UIImagePickerControllerDelegate,
     
     @objc
     func tapDone(sender: Any) {
-//        var height = mainTextTextView.frame.height
         
         if heightConstraintForTitle.constant > 100 {
         self.view.frame.origin.y = 0
@@ -184,36 +182,16 @@ class MakeNewsViewController: UIViewController, UIImagePickerControllerDelegate,
         
         self.view.endEditing(true)
     }
-
-    
-//    @objc
-//    func updateTextView(notification: Notification){
-//        let userInfo = notification.userInfo
-//        let getKeyboardRect = (userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as!NSValue).cgRectValue
-//        let keyboardFrame = self.view.convert(getKeyboardRect, to: view.window)
-//
-//
-//        if notification.name == UIResponder.keyboardWillHideNotification {
-//            mainTextTextView.contentInset = UIEdgeInsets.zero
-//        } else {
-//            mainTextTextView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardFrame.height, right: 0)
-//            mainTextTextView.scrollIndicatorInsets = mainTextTextView.contentInset
-//
-//        }
-//        mainTextTextView.scrollRangeToVisible(mainTextTextView.selectedRange)
-//
-//
-//    }
     
     func setNavigationController(){
         navigationController?.setNavigationBarHidden(false, animated: true)
         navigationItem.title = ""
         navigationItem.largeTitleDisplayMode = .never
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Создать", style: .plain, target: self, action: #selector(SaveButtonTapped))
-        navigationItem.rightBarButtonItem?.tintColor = #colorLiteral(red: 0.2509803922, green: 0.3294117647, blue: 0.6980392157, alpha: 1)
+        navigationItem.rightBarButtonItem?.tintColor = Colors.darkBlue
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Отмена", style: .plain, target: self, action: #selector(close))
-        navigationItem.leftBarButtonItem?.tintColor = .black
+        navigationItem.leftBarButtonItem?.tintColor = Colors.black
     }
     
     func addSubViews(){
@@ -231,7 +209,6 @@ class MakeNewsViewController: UIViewController, UIImagePickerControllerDelegate,
         scrollview.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
         scrollview.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
         scrollview.bottomAnchor.constraint(equalTo: addPoliticianButton.topAnchor, constant: 0).isActive = true
-
 
         loadImageButton.topAnchor.constraint(equalTo: scrollview.topAnchor, constant: 20).isActive = true
         loadImageButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16).isActive = true
@@ -260,7 +237,7 @@ class MakeNewsViewController: UIViewController, UIImagePickerControllerDelegate,
         titleTextView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 15).isActive = true
         titleTextView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -15).isActive = true
         titleTextView.heightAnchor.constraint(equalToConstant: 42).isActive = true
-        //ГЛАВНЫЙ
+        
         mainTextTextView.topAnchor.constraint(equalTo: titleTextView.bottomAnchor, constant: 10).isActive = true
         mainTextTextView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 15).isActive = true
         mainTextTextView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -15).isActive = true
@@ -314,10 +291,7 @@ class MakeNewsViewController: UIViewController, UIImagePickerControllerDelegate,
         loadImageButton.isHidden = false
         newsImageView.isHidden = true
         deleteImageButton.isHidden = true
-//        view.removeConstraint(heightConstraintForTitle)
         heightConstraintForTitle.constant = 50
-//        print(newsImageView.frame.height)
-//        print(heightConstraintForTitle.constant)
     }
     
     @objc
@@ -330,10 +304,6 @@ class MakeNewsViewController: UIViewController, UIImagePickerControllerDelegate,
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
           imagePicker.dismiss(animated: true, completion: nil)
-//          guard let image = (info[UIImagePickerController.InfoKey.editedImage] as! UIImage).pngData() else {
-//            print("Error no image")
-//            return
-//          }
           newsImageView.image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage
         
         loadImageButton.isHidden = true
@@ -343,12 +313,11 @@ class MakeNewsViewController: UIViewController, UIImagePickerControllerDelegate,
         heightConstraintForTitle.constant = 195
         heightConstraintForTitle = newsImageView.heightAnchor.constraint(equalToConstant: 195)
         view.addConstraint(heightConstraintForTitle)
-//        scrollview.contentSize = CGSize(width: view.frame.width, height: view.frame.height + 200)
       }
     
     @objc
     func SaveButtonTapped(){
-//
+        
         guard let title = titleTextView.text, title != "Напишите заголовок" else {
             let alert = UIAlertController(title: "Ой!", message: "Пожалуйста, введите заголовок для новости", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Ок", style: .default, handler: nil))
@@ -378,11 +347,9 @@ class MakeNewsViewController: UIViewController, UIImagePickerControllerDelegate,
         
         let vc = AuthorSettingsScreenView()
         let newPost = AddPost(title: titleTextView.text, mainText: mainTextTextView.text, photo: newsImageView.image?.pngData() as! NSData, selectedDay: selectedDay)
-//        let person = try! realm.objects(Person.self)
         
         try! self.realm.write {
             self.realm.add(newPost)
-//            person.first?.selectedDay = finalSelectedDay
             vc.tableview.reloadData()
         }
         print("\njust: \(finalSelectedDay)")
@@ -412,12 +379,6 @@ extension MakeNewsViewController: UITextViewDelegate {
     
     func textViewDidChange(_ textView: UITextView){
         print(textView.text ?? "fail with typing text")
-        
-//        let heightOfTitleText = heightForView(text: titleTextView.text, font: UIFont(name: "SFProDisplay-Bold", size: 22)!)
-//        print("\nnHEIGHT OF TITLE TEXT - \(heightOfTitleText)")
-//
-//        let heightOfMainText = heightForView(text: mainTextTextView.text, font: UIFont(name: "SFProText-Regular", size: 17)!)
-//        print("\nnHEIGHT OF MAIN TEXT - \(heightOfMainText)")
 
         scrollview.contentSize = CGSize(width: view.frame.width, height: 20 + 200 + 20 + findOutTitleTextViewHeight() + 10 + findOutMainTextViewHeight() + 100 + 200)
         
@@ -438,7 +399,7 @@ extension MakeNewsViewController: UITextViewDelegate {
         if textView == textView {
             if textView.textColor == UIColor.lightGray {
                 textView.text = nil
-                textView.textColor = UIColor.black
+                textView.textColor = Colors.black
             }
         }
     }

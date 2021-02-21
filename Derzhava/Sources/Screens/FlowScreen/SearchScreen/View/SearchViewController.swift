@@ -15,92 +15,17 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
     
     var lastContentOffset: CGFloat = 0
     
-//    var const = NSLayoutConstraint()
-
-    
     var labelArrat = ["Виталий Милонов","Иван Вокодавсакий","Антон Силуанов","Иван Вокодавсакий","Виталий Милонов","Иван Вокодавсакий","Антон Силуанов","Иван Вокодавсакий","Виталий Милонов","Иван Вокодавсакий","Антон Силуанов"]
     
     let imageArray:[UIImage] = [UIImage(named: "milonov")!,UIImage(named: "polit")!,UIImage(named: "sil")!,UIImage(named: "polit")!,UIImage(named: "milonov")!,UIImage(named: "polit")!,UIImage(named: "sil")!,UIImage(named: "polit")!,UIImage(named: "milonov")!,UIImage(named: "polit")!,UIImage(named: "sil")!]
-    
-//    let tableview:UITableView = {
-//        let table = UITableView()
-//        table.translatesAutoresizingMaskIntoConstraints = false
-//        table.separatorStyle = .singleLine
-//        table.backgroundColor = #colorLiteral(red: 0.9529411765, green: 0.9568627451, blue: 0.9607843137, alpha: 1)
-//        return table
-//    }()
-//
-//    private enum Constants {
-//        static let segmentedControlHeight: CGFloat = 40
-//        static let underlineViewColor: UIColor = #colorLiteral(red: 0.2509803922, green: 0.3294117647, blue: 0.6980392157, alpha: 1)
-//        static let underlineViewHeight: CGFloat = 2
-//    }
-//
-//    // Container view of the segmented control
-//    private lazy var segmentedControlContainerView: UIView = {
-//        let containerView = UIView()
-//        containerView.backgroundColor = #colorLiteral(red: 0.9529411765, green: 0.9568627451, blue: 0.9607843137, alpha: 1)
-//        containerView.translatesAutoresizingMaskIntoConstraints = false
-//        return containerView
-//    }()
-//
-//    // Customised segmented control
-//    private lazy var segmentedControl: UISegmentedControl = {
-//        let segmentedControl = UISegmentedControl()
-//
-//        // Remove background and divider colors
-//        segmentedControl.backgroundColor = .clear
-//        segmentedControl.tintColor = .clear
-//
-//        // Append segments
-//        segmentedControl.insertSegment(withTitle: "Общее", at: 0, animated: true)
-//        segmentedControl.insertSegment(withTitle: "Авторы", at: 1, animated: true)
-//        segmentedControl.insertSegment(withTitle: "Дебаты", at: 2, animated: true)
-//        segmentedControl.insertSegment(withTitle: "Новости", at: 3, animated: true)
-//
-//        // Select first segment by default
-//        segmentedControl.selectedSegmentIndex = 0
-//
-//        // Change text color and the font of the NOT selected (normal) segment
-//        segmentedControl.setTitleTextAttributes([
-//            NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.5411764706, green: 0.5411764706, blue: 0.5568627451, alpha: 1),
-//            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16, weight: .regular)], for: .normal)
-//
-//        // Change text color and the font of the selected segment
-//        segmentedControl.setTitleTextAttributes([
-//            NSAttributedString.Key.foregroundColor: Constants.underlineViewColor,
-//            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16, weight: .bold)], for: .selected)
-//
-//        // Set up event handler to get notified when the selected segment changes
-//        segmentedControl.addTarget(self, action: #selector(segmentedControlValueChanged), for: .valueChanged)
-//
-//        // Return false because we will set the constraints with Auto Layout
-//        segmentedControl.translatesAutoresizingMaskIntoConstraints = false
-//        return segmentedControl
-//    }()
-//
-//    // The underline view below the segmented control
-//    private lazy var bottomUnderlineView: UIView = {
-//        let underlineView = UIView()
-//        underlineView.backgroundColor = Constants.underlineViewColor
-//        underlineView.translatesAutoresizingMaskIntoConstraints = false
-//        return underlineView
-//    }()
-//
-//    private lazy var leadingDistanceConstraint: NSLayoutConstraint = {
-//        return bottomUnderlineView.leftAnchor.constraint(equalTo: segmentedControl.leftAnchor)
-//    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = #colorLiteral(red: 0.9529411765, green: 0.9568627451, blue: 0.9607843137, alpha: 1)
+        view.backgroundColor = Colors.background
         setNavigationController()
         setContentView()
         setTableView()
-//        addSubViews()
         setSegmentedControll()
-//        setConstrains()
-        
     }
     
     override func loadView() {
@@ -135,31 +60,13 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
         navigationController?.setNavigationBarHidden(false, animated: true)
         navigationItem.title = "Поток"
         navigationController?.navigationBar.prefersLargeTitles = true
-        navigationController?.navigationBar.backgroundColor = #colorLiteral(red: 0.9568627451, green: 0.9568627451, blue: 0.9568627451, alpha: 1)
+        navigationController?.navigationBar.backgroundColor = Colors.background
         navigationItem.searchController = searchController
         searchController.searchBar.delegate = self
         searchController.searchBar.placeholder = "Поиск"
         searchController.searchBar.setValue("Назад", forKey: "cancelButtonText")
-        searchController.searchBar.tintColor = #colorLiteral(red: 0.2509803922, green: 0.3294117647, blue: 0.6980392157, alpha: 1)
+        searchController.searchBar.tintColor = Colors.darkBlue
     }
-    
-//    func addSubViews(){
-//        view.addSubview(segmentedControlContainerView)
-//        view.addSubview(tableview)
-//        segmentedControlContainerView.addSubview(segmentedControl)
-//        segmentedControlContainerView.addSubview(bottomUnderlineView)
-//    }
-    
-//    func setConstrains(){
-//        let constr = segmentedControlContainerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0)
-//        constr.isActive = true
-//        segmentedControlContainerView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
-//        segmentedControlContainerView.heightAnchor.constraint(equalToConstant: Constants.segmentedControlHeight).isActive = true
-//
-//        tableview.topAnchor.constraint(equalTo: segmentedControlContainerView.bottomAnchor, constant: 0).isActive = true
-//        tableview.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
-//        tableview.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
-//    }
     
     func setContentView(){
         contentView.segmentedControl.removeBorders()
@@ -220,21 +127,13 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
             
         }
-//        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ChangeSubjectTableViewCell") as? ChangeSubjectTableViewCell else {
-//            assertionFailure("ChangeSubjectTableViewCell is not available")
-//            return UITableViewCell()
-//        }
-//        cell.subjectLabel.text = labelArrat[indexPath.row]
-//        cell.photoImageView.image = imageArray[indexPath.row]
-//
-//        return cell
+
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if self.lastContentOffset < scrollView.contentOffset.y {
             // did move up
             print("\nMOVE DOWN")
-            //navigationController?.navigationBar.backgroundColor = .red
             
             contentView.const.isActive = false
             contentView.const = contentView.segmentedControlContainerView.topAnchor.constraint(equalTo: view.topAnchor, constant: 40)
@@ -248,7 +147,6 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         } else if self.lastContentOffset > scrollView.contentOffset.y {
             // did move down
             print("\nMOVE UP")
-            //navigationController?.navigationBar.backgroundColor = .green
             
             contentView.const.isActive = false
             contentView.const = contentView.segmentedControlContainerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0)

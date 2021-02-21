@@ -7,16 +7,14 @@
 //
 
 import Foundation
-
 import UIKit
-//import ExpandableLabel
 
 class FullNewsTableViewCell: UITableViewCell {
     
     let container:UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = #colorLiteral(red: 0.9568627451, green: 0.9568627451, blue: 0.9568627451, alpha: 1)
+        view.backgroundColor = Colors.background
         return view
     }()
     
@@ -59,15 +57,14 @@ class FullNewsTableViewCell: UITableViewCell {
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.translatesAutoresizingMaskIntoConstraints = false
         cv.register(FullNewsCollectionViewCell.self, forCellWithReuseIdentifier: "FullNewsCollectionViewCell")
-        cv.backgroundColor = #colorLiteral(red: 0.9568627451, green: 0.9568627451, blue: 0.9568627451, alpha: 1)
+        cv.backgroundColor = Colors.background
         cv.showsHorizontalScrollIndicator = false
         return cv
     }()
-    //в гит
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        contentView.backgroundColor = #colorLiteral(red: 0.9568627451, green: 0.9568627451, blue: 0.9568627451, alpha: 1)
+        contentView.backgroundColor = Colors.background
         setCollectionView()
         addAllSubviews()
         setConstrains()
@@ -136,7 +133,6 @@ extension FullNewsTableViewCell: UICollectionViewDelegateFlowLayout, UICollectio
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let celll = collectionView.dequeueReusableCell(withReuseIdentifier: "FullNewsCollectionViewCell", for: indexPath) as! FullNewsCollectionViewCell
-//        celll.data = self.data[indexPath.item]
         celll.bg.image = data[indexPath.row].backgroundImage
         celll.nameSurnameLabel.text = data[indexPath.row].title
         return celll

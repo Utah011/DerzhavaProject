@@ -11,78 +11,6 @@ import UIKit
 class TimeAndPriceForPublicationsViewController: UIViewController {
     
     let contentView = TimeAndPriceForPublicationScreenView()
-        
-//    let tableview:UITableView = {
-//        let table = UITableView()
-//        table.translatesAutoresizingMaskIntoConstraints = false
-//        table.separatorStyle = .singleLine
-//        return table
-//    }()
-//
-//    let chooseADayView:UIView = {
-//        let view = UIView()
-//        view.translatesAutoresizingMaskIntoConstraints = false
-//        view.backgroundColor = #colorLiteral(red: 0.9568627451, green: 0.9568627451, blue: 0.9568627451, alpha: 1)
-//        return view
-//    }()
-//
-//    let titleForChooseView:UILabel = {
-//        let lbl = UILabel()
-//        lbl.translatesAutoresizingMaskIntoConstraints = false
-//        lbl.text = "ВЫБЕРИТЕ ДЕНЬ"
-//        lbl.font = UIFont(name: "SFProText-Regular", size: 17)
-//        lbl.textColor = #colorLiteral(red: 0.5411764706, green: 0.5411764706, blue: 0.5568627451, alpha: 1)
-//        return lbl
-//    }()
-//
-//    let todayButtonForChooseView:UIButton = {
-//        let btn = UIButton()
-//        btn.translatesAutoresizingMaskIntoConstraints = false
-//        btn.setTitle("Сегодня", for: .normal)
-//        btn.setTitleColor(.black, for: .normal)
-//        btn.clipsToBounds = true
-//        btn.layer.cornerRadius = 15
-//        btn.backgroundColor = #colorLiteral(red: 0.9568627451, green: 0.9568627451, blue: 0.9568627451, alpha: 1)
-//        btn.addTarget(self, action: #selector(todayButtonActions), for: .touchUpInside)
-//        return btn
-//    }()
-//
-//    let tomorrowButtonForChooseView:UIButton = {
-//        let btn = UIButton()
-//        btn.translatesAutoresizingMaskIntoConstraints = false
-//        btn.setTitle("Завтра", for: .normal)
-//        btn.setTitleColor(.black, for: .normal)
-//        btn.clipsToBounds = true
-//        btn.layer.cornerRadius = 15
-//        btn.backgroundColor = #colorLiteral(red: 0.9568627451, green: 0.9568627451, blue: 0.9568627451, alpha: 1)
-//        btn.addTarget(self, action: #selector(tomorrowButtonActions), for: .touchUpInside)
-//        return btn
-//    }()
-//
-//    let chooseTimeView:UIView = {
-//        let view = UIView()
-//        view.translatesAutoresizingMaskIntoConstraints = false
-//        view.backgroundColor = #colorLiteral(red: 0.9568627451, green: 0.9568627451, blue: 0.9568627451, alpha: 1)
-//        view.isHidden = true
-//        return view
-//    }()
-//
-//    let titleForTimeView:UILabel = {
-//        let lbl = UILabel()
-//        lbl.translatesAutoresizingMaskIntoConstraints = false
-//        lbl.text = "ВЫБЕРИТЕ ВРЕМЯ"
-//        lbl.font = UIFont(name: "SFProText-Regular", size: 17)
-//        lbl.textColor = #colorLiteral(red: 0.5411764706, green: 0.5411764706, blue: 0.5568627451, alpha: 1)
-//        return lbl
-//    }()
-//
-//    let pickerView:UIPickerView = {
-//        let view = UIPickerView()
-//        view.isHidden = true
-//        view.backgroundColor = .orange
-//        view.layer.cornerRadius = 16
-//        return view
-//    }()
     
     let formatter:DateFormatter = {
         let form = DateFormatter()
@@ -132,17 +60,12 @@ class TimeAndPriceForPublicationsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = #colorLiteral(red: 0.9568627451, green: 0.9568627451, blue: 0.9568627451, alpha: 1)
+        view.backgroundColor = Colors.background
         
         setNavigationController()
         viewSettings()
         setTableView()
-//        addSubviews()
-//        setConstraint()
-//        setConstrainsForChooseView()
-//        setConstrainsForChooseTimeView()
         pickerViewSettings()
-
     }
     
     override func loadView() {
@@ -176,11 +99,11 @@ class TimeAndPriceForPublicationsViewController: UIViewController {
         contentView.chooseTimeView.isHidden = false
         contentView.tableview.isHidden = false
         contentView.tableview.reloadData()
-        contentView.todayButtonForChooseView.backgroundColor = #colorLiteral(red: 0.2509803922, green: 0.3294117647, blue: 0.6980392157, alpha: 1)
-        contentView.todayButtonForChooseView.setTitleColor(.white, for: .normal)
+        contentView.todayButtonForChooseView.backgroundColor = Colors.darkBlue
+        contentView.todayButtonForChooseView.setTitleColor(Colors.white, for: .normal)
         
-        contentView.tomorrowButtonForChooseView.backgroundColor = #colorLiteral(red: 0.9568627451, green: 0.9568627451, blue: 0.9568627451, alpha: 1)
-        contentView.tomorrowButtonForChooseView.setTitleColor(.black, for: .normal)
+        contentView.tomorrowButtonForChooseView.backgroundColor = Colors.background
+        contentView.tomorrowButtonForChooseView.setTitleColor(Colors.black, for: .normal)
         
         selectedDay = formatter.string(from: today)
         print("\nSELECTED DAY (today) - \(selectedDay)")
@@ -192,11 +115,11 @@ class TimeAndPriceForPublicationsViewController: UIViewController {
         contentView.tableview.isHidden = false
         contentView.tableview.reloadData()
         contentView.tomorrowButtonForChooseView.isSelected = true
-        contentView.tomorrowButtonForChooseView.backgroundColor = #colorLiteral(red: 0.2509803922, green: 0.3294117647, blue: 0.6980392157, alpha: 1)
-        contentView.tomorrowButtonForChooseView.setTitleColor(.white, for: .normal)
+        contentView.tomorrowButtonForChooseView.backgroundColor = Colors.darkBlue
+        contentView.tomorrowButtonForChooseView.setTitleColor(Colors.white, for: .normal)
         
-        contentView.todayButtonForChooseView.backgroundColor = #colorLiteral(red: 0.9568627451, green: 0.9568627451, blue: 0.9568627451, alpha: 1)
-        contentView.todayButtonForChooseView.setTitleColor(.black, for: .normal)
+        contentView.todayButtonForChooseView.backgroundColor = Colors.background
+        contentView.todayButtonForChooseView.setTitleColor(Colors.black, for: .normal)
         
         
         selectedDay = formatter.string(from: tomorrow)
@@ -215,10 +138,10 @@ class TimeAndPriceForPublicationsViewController: UIViewController {
         navigationItem.title = ""
         navigationItem.largeTitleDisplayMode = .never
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Подтвердить", style: .plain, target: self, action: #selector(saveButtonTapped))
-        navigationItem.rightBarButtonItem?.tintColor = #colorLiteral(red: 0.2509803922, green: 0.3294117647, blue: 0.6980392157, alpha: 1)
+        navigationItem.rightBarButtonItem?.tintColor = Colors.darkBlue
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Отмена", style: .plain, target: self, action: #selector(close))
-        navigationItem.leftBarButtonItem?.tintColor = .black
+        navigationItem.leftBarButtonItem?.tintColor = Colors.black
     }
     
     @objc
@@ -233,42 +156,6 @@ class TimeAndPriceForPublicationsViewController: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
-//    func setConstraint(){
-//
-//        chooseADayView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
-//        chooseADayView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
-//        chooseADayView.heightAnchor.constraint(equalToConstant: 100).isActive = true
-//
-//        chooseTimeView.topAnchor.constraint(equalTo: chooseADayView.bottomAnchor, constant: 0).isActive = true
-//        chooseTimeView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
-//        chooseTimeView.heightAnchor.constraint(equalToConstant: 60).isActive = true
-//
-//        tableview.topAnchor.constraint(equalTo: chooseTimeView.bottomAnchor, constant: 0).isActive = true
-//        tableview.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0).isActive = true
-//        tableview.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0).isActive = true
-//        tableview.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
-//    }
-//
-//    func setConstrainsForChooseView(){
-//        titleForChooseView.topAnchor.constraint(equalTo: chooseADayView.topAnchor, constant: 30).isActive = true
-//        titleForChooseView.leftAnchor.constraint(equalTo: chooseADayView.leftAnchor, constant: 10).isActive = true
-//
-//        todayButtonForChooseView.topAnchor.constraint(equalTo: titleForChooseView.bottomAnchor, constant: 15).isActive = true
-//        todayButtonForChooseView.leftAnchor.constraint(equalTo: chooseADayView.leftAnchor, constant: 48).isActive = true
-//        todayButtonForChooseView.widthAnchor.constraint(equalToConstant: 100).isActive = true
-//        todayButtonForChooseView.heightAnchor.constraint(equalToConstant: 30).isActive = true
-//
-//        tomorrowButtonForChooseView.topAnchor.constraint(equalTo: titleForChooseView.bottomAnchor, constant: 15).isActive = true
-//        tomorrowButtonForChooseView.rightAnchor.constraint(equalTo: chooseADayView.rightAnchor, constant: -48).isActive = true
-//        tomorrowButtonForChooseView.widthAnchor.constraint(equalToConstant: 100).isActive = true
-//        tomorrowButtonForChooseView.heightAnchor.constraint(equalToConstant: 30).isActive = true
-//    }
-//
-//    func setConstrainsForChooseTimeView(){
-//        titleForTimeView.topAnchor.constraint(equalTo: chooseTimeView.topAnchor, constant: 30).isActive = true
-//        titleForTimeView.leftAnchor.constraint(equalTo: chooseTimeView.leftAnchor, constant: 10).isActive = true
-//    }
-    
     func pickerViewSettings(){
         contentView.pickerView.frame = CGRect(x: 15, y: view.frame.height / 2, width: view.frame.width - 30, height: 200)
         
@@ -278,13 +165,6 @@ class TimeAndPriceForPublicationsViewController: UIViewController {
         cornerView.backgroundColor = .blue
         cornerView.frame = CGRect(x: 10, y: 5, width: 200, height: 20)
     }
-    
-//    func addSubviews(){
-//        [chooseADayView,chooseTimeView,tableview,pickerView].forEach{self.view.addSubview($0)}
-//        [titleForChooseView,todayButtonForChooseView,tomorrowButtonForChooseView].forEach{self.chooseADayView.addSubview($0)}
-//        [titleForTimeView].forEach{self.chooseTimeView.addSubview($0)}
-//        pickerView.addSubview(cornerView)
-//    }
     
     func setTableView(){
         contentView.tableview.delegate = self
@@ -306,10 +186,6 @@ extension TimeAndPriceForPublicationsViewController: UITableViewDelegate, UITabl
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        guard let cellTop = tableView.dequeueReusableCell(withIdentifier: "ChooseDayForPublicationTableViewCell") as? ChooseDayForPublicationTableViewCell else {
-//            assertionFailure("ChooseDayForPublicationTableViewCell is not available")
-//            return UITableViewCell()
-//        }
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "ChooseTimeAndPriceTableViewCell") as? ChooseTimeAndPriceTableViewCell else {
             assertionFailure("NewsTableViewCell is not available")
@@ -326,7 +202,7 @@ extension TimeAndPriceForPublicationsViewController: UITableViewDelegate, UITabl
         
         if selectedDay == formatter.string(from: tomorrow) {
             cell.notAvailabelLabel.text = "\(price[indexPath.row]) РУБ"
-            cell.contentView.backgroundColor = .white
+            cell.contentView.backgroundColor = Colors.white
             
         } else {
             
@@ -336,13 +212,8 @@ extension TimeAndPriceForPublicationsViewController: UITableViewDelegate, UITabl
                 cell.notAvailabelLabel.text = "Недоступно"
                 cell.contentView.backgroundColor = #colorLiteral(red: 0.862745098, green: 0.862745098, blue: 0.8666666667, alpha: 1)
             } else {
-                
-//                let newPriceArray = price.evenlySpaced(length: 22 - currentHour)
-//                print("\nNumber of elements in new array - \(newPriceArray)")
-//                cell.notAvailabelLabel.text = "\(price[4]) РУБ"
-                cell.contentView.backgroundColor = .white
+                cell.contentView.backgroundColor = Colors.white
             }
-            
         }
 
         cell.timeLabel.text = formatterHour.string(from: hours[indexPath.row])
@@ -387,9 +258,6 @@ extension TimeAndPriceForPublicationsViewController: UIPickerViewDelegate, UIPic
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-//        let price = priceForPublication[row]
-        
-        
         pickerView.isHidden = true
         contentView.tableview.isUserInteractionEnabled = true
         contentView.todayButtonForChooseView.isUserInteractionEnabled = true
@@ -398,16 +266,3 @@ extension TimeAndPriceForPublicationsViewController: UIPickerViewDelegate, UIPic
     
     
 }
-
-
-//extension Array {
-//
-//    func evenlySpaced(length: Int) -> [Element] {
-//        guard length < self.count else { return self }
-//
-//        let takeIndex = (self.count / length) - 1
-//        let nextArray = Array(self.dropFirst(takeIndex + 1))
-//        return [self[takeIndex]] + nextArray.evenlySpaced(length: length - 1)
-//    }
-//
-//}
